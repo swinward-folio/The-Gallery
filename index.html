@@ -554,13 +554,10 @@ textarea.fi{resize:vertical;min-height:100px;}
   <div class="nav-r">
     <span class="nav-l" onclick="show('talent')">Browse talent</span>
     <span class="nav-l" onclick="show('studios')">Studios</span>
-    <span class="nav-l" onclick="show('jess')">Jess Hartley</span>
-    <span class="nav-l" onclick="show('uncommon')">Uncommon Studio</span>
     <span class="nav-l" onclick="show('jobs')">Jobs board</span>
     <span class="nav-l" id="nav-studio" style="display:none" onclick="show('studio-dash');setTimeout(()=>dashNav(document.querySelector('#page-studio-dash .dash-nav-item'),'overview'),50)">My studio</span>
     <span class="nav-l" id="nav-freelancer" style="display:none" onclick="show('freelancer-profile')">My profile</span>
-    <span class="nav-l" onclick="show('emails')">Email templates</span>
-    <span class="nav-l" onclick="openM('avail')"><div class="pip pip-g" style="width:6px;height:6px;box-shadow:none;"></div>Update status</span>
+    <span class="nav-l" id="nav-update-status" style="display:none" onclick="openM('avail')"><div class="pip pip-g" style="width:6px;height:6px;box-shadow:none;"></div>Update status</span>
     <button class="nav-btn" onclick="openM('join-choice')">Join</button>
   </div>
 </nav>
@@ -2497,7 +2494,7 @@ function submitJoin(){
       <p style="font-size:13px;color:var(--ink-mid);line-height:1.7;margin-bottom:16px">Application received. We review every submission personally — you'll hear back within 5 working days.</p>
       <div style="display:flex;gap:10px;margin-top:20px">
         <button style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:10px 20px;border:var(--bdr);background:transparent;color:var(--ink);cursor:pointer;font-family:var(--sans)" onclick="closeM('join')">Close</button>
-        <button class="btn-dark" onclick="closeM('join');document.getElementById('nav-freelancer').style.display='flex';show('freelancer-profile')">Build my profile →</button>
+        <button class="btn-dark" onclick="closeM('join');document.getElementById('nav-freelancer').style.display='flex';document.getElementById('nav-update-status').style.display='flex';show('freelancer-profile')">Build my profile →</button>
       </div>
     </div>`;
   toast('Application received');
