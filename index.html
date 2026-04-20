@@ -558,6 +558,7 @@ textarea.fi{resize:vertical;min-height:100px;}
     <span class="nav-l" id="nav-studio" style="display:none" onclick="show('studio-dash');setTimeout(()=>dashNav(document.querySelector('#page-studio-dash .dash-nav-item'),'overview'),50)">My studio</span>
     <span class="nav-l" id="nav-freelancer" style="display:none" onclick="show('freelancer-profile')">My profile</span>
     <span class="nav-l" id="nav-update-status" style="display:none" onclick="openM('avail')"><div class="pip pip-g" style="width:6px;height:6px;box-shadow:none;"></div>Update status</span>
+    <span class="nav-l" onclick="show('howitworks')">How it works</span>
     <button class="nav-btn" onclick="openM('join-choice')">Join</button>
   </div>
 </nav>
@@ -1682,7 +1683,7 @@ Previously: Mother, Uncommon, VCCP. Clients include Nike, Guinness, Barclays, Th
           <p>We're selective because the studios we work with expect a certain standard. That's what makes being on here worth something.</p>
           <p>You'll hear from us within 5 working days either way. If we think there's a fit, the next step is a quick call to understand what kind of work you're looking for and make sure we can match you with the right people.</p>
           <p>In the meantime — if anything changes on your availability, just reply to this email and we'll update it.</p>
-          <div class="email-sig"><strong>Sam Winward</strong>The Gallery · hello@thegallery.global</div>
+          <div class="email-sig"><strong>The Gallery</strong>The Gallery · hello@thegallery.global</div>
         </div>
       </div>
     </div>
@@ -1699,7 +1700,7 @@ Previously: Mother, Uncommon, VCCP. Clients include Nike, Guinness, Barclays, Th
           <p>One thing that makes a real difference: keeping your availability updated. Freelancers who do it regularly are 10× more likely to land the better briefs. It takes 10 seconds — just reply to this email, drop us a WhatsApp, or update on the site.</p>
           <p>We'll nudge you every two weeks so you don't have to think about it. All you need to send is something like "available now" or "free in 2 weeks" — we'll handle the rest.</p>
           <p>Welcome to the list.</p>
-          <div class="email-sig"><strong>Sam Winward</strong>The Gallery · hello@thegallery.global</div>
+          <div class="email-sig"><strong>The Gallery</strong>The Gallery · hello@thegallery.global</div>
         </div>
       </div>
     </div>
@@ -1716,7 +1717,7 @@ Previously: Mother, Uncommon, VCCP. Clients include Nike, Guinness, Barclays, Th
           <p>When you're in, you'll be able to see the full talent pool with live availability signals, save freelancers to your watchlist, and get notified automatically when someone you've worked with before becomes free again.</p>
           <p>If you have a specific brief you're trying to fill right now, just reply to this and I'll pull a shortlist together before your account goes live. Quicker than waiting.</p>
           <p>Speak soon.</p>
-          <div class="email-sig"><strong>Sam Winward</strong>The Gallery · hello@thegallery.global</div>
+          <div class="email-sig"><strong>The Gallery</strong>The Gallery · hello@thegallery.global</div>
         </div>
       </div>
     </div>
@@ -1752,7 +1753,7 @@ Previously: Mother, Uncommon, VCCP. Clients include Nike, Guinness, Barclays, Th
           <p>When you're ready, just reply with where you're at:</p>
           <p style="font-weight:500;color:var(--ink);">· Still booked — free around [date]<br>· Available now<br>· Free in the next few weeks</p>
           <p>No pressure — just keeping your profile working for you in the background.</p>
-          <div class="email-sig"><strong>Sam Winward</strong>The Gallery · hello@thegallery.global</div>
+          <div class="email-sig"><strong>The Gallery</strong>The Gallery · hello@thegallery.global</div>
         </div>
       </div>
       <div style="margin-top:20px;padding:16px;background:var(--cream-mid);border:var(--bdr);font-size:12px;color:var(--ink-light);line-height:1.7;">
@@ -2422,6 +2423,7 @@ function show(id){
     // Static cards are already in the DOM — no need to re-render on show
   }
   if(id==='studios') requestAnimationFrame(()=>renderStudios());
+  if(id==='howitworks') requestAnimationFrame(()=>renderStudios());
   if(id==='jobs') requestAnimationFrame(()=>renderJobs());
   if(id==='jess'){
     const btn=document.getElementById('jess-save-btn');
@@ -2791,7 +2793,6 @@ function toast(msg){
 
 // Studios directory
 const STUDIOS=[
-  {id:'aceofhearts',name:'Ace of Hearts',type:'agency',loc:'London',makes:['Brand campaigns','Creative advertising','OOH','Digital','Social'],hires:['Art Direction','Copywriting','Creative Direction','Strategy'],placements:0,hiring:true,desc:'One of the UK\'s newest and most exciting indie agencies, launched in 2025. Putting creativity at the heart of business.'},
   {id:'uncommon',name:'Uncommon',type:'agency',loc:'London',makes:['Brand campaigns','OOH','Film & TV','Strategy'],hires:['Art Direction','Copywriting','Strategy'],placements:7,hiring:true,desc:'An independent creative company. Known for brand work with genuine cultural impact.'},
   {id:'mother',name:'Mother London',type:'agency',loc:'London',makes:['Brand campaigns','Social','Film','Digital'],hires:['Art Direction','Design','Copywriting'],placements:12,hiring:true,desc:'One of London\'s most celebrated independent agencies. Unpredictable, distinctive work.'},
   {id:'joan',name:'JOAN',type:'agency',loc:'London',makes:['Brand','Social','Digital','OOH'],hires:['Art Direction','Copywriting','Strategy'],placements:4,hiring:true,desc:'A creative company that puts culture first. Challenger brands, big ideas.'},
@@ -3056,5 +3057,400 @@ function jessToggleSave(){
 
 // No init renders — show() handles rendering when pages become active
 </script>
+
+<!-- HOW IT WORKS -->
+<div class="page" id="page-howitworks">
+
+  <!-- Page header -->
+  <div style="background:var(--ink);padding:56px 36px 48px;">
+    <div style="max-width:1200px;margin:0 auto;">
+      <div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:16px;">Platform preview</div>
+      <h1 style="font-family:var(--serif);font-size:clamp(48px,6vw,80px);font-weight:300;color:var(--cream);line-height:1;margin-bottom:16px;">How it <em style="font-style:italic;color:var(--ink-light)">works.</em></h1>
+      <p style="font-size:15px;color:rgba(249,246,241,.5);max-width:520px;line-height:1.7;">Three views into The Gallery — what a studio profile looks like, what a freelancer profile looks like, and how the platform communicates automatically.</p>
+      <div style="display:flex;gap:12px;margin-top:32px;flex-wrap:wrap;">
+        <a href="#hiw-studio" style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:9px 20px;border:1px solid rgba(249,246,241,.25);color:rgba(249,246,241,.7);text-decoration:none;transition:all .15s;" onmouseover="this.style.borderColor='rgba(249,246,241,.6)'" onmouseout="this.style.borderColor='rgba(249,246,241,.25)'">01 · Studio profile</a>
+        <a href="#hiw-talent" style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:9px 20px;border:1px solid rgba(249,246,241,.25);color:rgba(249,246,241,.7);text-decoration:none;transition:all .15s;" onmouseover="this.style.borderColor='rgba(249,246,241,.6)'" onmouseout="this.style.borderColor='rgba(249,246,241,.25)'">02 · Talent profile</a>
+        <a href="#hiw-emails" style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:9px 20px;border:1px solid rgba(249,246,241,.25);color:rgba(249,246,241,.7);text-decoration:none;transition:all .15s;" onmouseover="this.style.borderColor='rgba(249,246,241,.6)'" onmouseout="this.style.borderColor='rgba(249,246,241,.25)'">03 · Auto-responses</a>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- WHY SECTION -->
+  <div style="max-width:1200px;margin:0 auto;padding:64px 36px;border-bottom:var(--bdr);">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;">
+
+      <!-- For studios -->
+      <div>
+        <div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--green);">For studios &amp; agencies</div>
+        <div style="display:flex;flex-direction:column;gap:20px;">
+          <div style="display:flex;gap:16px;align-items:flex-start;">
+            <div style="font-family:var(--serif);font-size:28px;font-weight:300;color:var(--cream-dark);line-height:1;flex-shrink:0;width:28px;">1</div>
+            <div><div style="font-size:13px;font-weight:500;color:var(--ink);margin-bottom:5px;">See who's free before you pick up the phone</div><div style="font-size:12px;color:var(--ink-light);line-height:1.7;">Every freelancer carries a live green, amber or red availability signal. No more firing off emails into the void — you know who's free right now.</div></div>
+          </div>
+          <div style="display:flex;gap:16px;align-items:flex-start;">
+            <div style="font-family:var(--serif);font-size:28px;font-weight:300;color:var(--cream-dark);line-height:1;flex-shrink:0;width:28px;">2</div>
+            <div><div style="font-size:13px;font-weight:500;color:var(--ink);margin-bottom:5px;">Never lose track of who worked</div><div style="font-size:12px;color:var(--ink-light);line-height:1.7;">Save freelancers to your watchlist and get notified the moment someone you've worked with before becomes available again. Your bench, remembered.</div></div>
+          </div>
+          <div style="display:flex;gap:16px;align-items:flex-start;">
+            <div style="font-family:var(--serif);font-size:28px;font-weight:300;color:var(--cream-dark);line-height:1;flex-shrink:0;width:28px;">3</div>
+            <div><div style="font-size:13px;font-weight:500;color:var(--ink);margin-bottom:5px;">Flat fee. No booking cut.</div><div style="font-size:12px;color:var(--ink-light);line-height:1.7;">£499/month. No placement fees, no percentage of the booking. You pay the freelancer directly. The Gallery is just the infrastructure.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- For freelancers -->
+      <div>
+        <div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-light);margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--ink-light);">For freelancers</div>
+        <div style="display:flex;flex-direction:column;gap:20px;">
+          <div style="display:flex;gap:16px;align-items:flex-start;">
+            <div style="font-family:var(--serif);font-size:28px;font-weight:300;color:var(--cream-dark);line-height:1;flex-shrink:0;width:28px;">1</div>
+            <div><div style="font-size:13px;font-weight:500;color:var(--ink);margin-bottom:5px;">Be visible when it matters</div><div style="font-size:12px;color:var(--ink-light);line-height:1.7;">Studios search by availability first. Keep your signal green and you surface at exactly the right moment — when they have a brief and need someone now.</div></div>
+          </div>
+          <div style="display:flex;gap:16px;align-items:flex-start;">
+            <div style="font-family:var(--serif);font-size:28px;font-weight:300;color:var(--cream-dark);line-height:1;flex-shrink:0;width:28px;">2</div>
+            <div><div style="font-size:13px;font-weight:500;color:var(--ink);margin-bottom:5px;">No cold pitching, no chasing</div><div style="font-size:12px;color:var(--ink-light);line-height:1.7;">Express interest in studios you want to work with. They receive a curated digest every Monday — you're considered without having to knock on any doors.</div></div>
+          </div>
+          <div style="display:flex;gap:16px;align-items:flex-start;">
+            <div style="font-family:var(--serif);font-size:28px;font-weight:300;color:var(--cream-dark);line-height:1;flex-shrink:0;width:28px;">3</div>
+            <div><div style="font-size:13px;font-weight:500;color:var(--ink);margin-bottom:5px;">Free to join. Always.</div><div style="font-size:12px;color:var(--ink-light);line-height:1.7;">The Gallery is free for freelancers. Curated, not open-access — so being on the list means something. Studios trust the pool because we vet everyone in it.</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SECTION 01: Studio profile -->
+  <div id="hiw-studio" style="border-bottom:var(--bdr);">
+    <div style="max-width:1200px;margin:0 auto;padding:48px 36px 32px;display:flex;align-items:baseline;gap:20px;border-bottom:var(--bdr);">
+      <div style="font-family:var(--serif);font-size:64px;font-weight:300;color:var(--cream-dark);line-height:1;">01</div>
+      <div>
+        <h2 style="font-family:var(--serif);font-size:36px;font-weight:300;color:var(--ink);line-height:1;margin-bottom:6px;">Studio <em style="font-style:italic;color:var(--ink-light)">profile.</em></h2>
+        <p style="font-size:13px;color:var(--ink-light);max-width:560px;line-height:1.7;">When a studio subscribes, they get a profile page visible to freelancers. It shows who they are, what they make, how they hire — and their history on the platform. Freelancers can express interest in being in their weekly digest.</p>
+      </div>
+    </div>
+
+    <!-- ACE OF HEARTS STUDIO PROFILE INLINE -->
+    <div style="background:var(--ink);padding:48px 36px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end;">
+      <div>
+        <div style="font-family:var(--serif);font-size:56px;font-weight:300;color:var(--cream);line-height:1;margin-bottom:10px;">Ace of Hearts</div>
+        <div style="font-size:13px;color:var(--ink-faint);max-width:440px;line-height:1.7;">An indie creative agency putting creativity at the heart of business. Launched 2025.</div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:10px;">
+        <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:var(--green);"><div style="width:6px;height:6px;border-radius:50%;background:var(--green);"></div>Active subscriber</div>
+      </div>
+    </div>
+
+    <div style="max-width:1200px;margin:0 auto;padding:48px 36px 64px;display:grid;grid-template-columns:1fr 300px;gap:60px;align-items:start;">
+      <div>
+        <div style="margin-bottom:36px;">
+          <div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:14px;">About</div>
+          <div style="font-size:14px;color:var(--ink-mid);line-height:1.8;">Ace of Hearts is a London-based indie creative advertising agency launched in June 2025 by industry leaders Polly McMorrow, Richard Brim, and Martin Beverley. Positioned to solve modern business problems, it aims to put creativity at the heart of business by evolving traditional agency models and focusing on high-impact, non-traditional creative work.<br><br>We hire freelancers regularly — bringing in the best creative talent for specific campaigns and projects. We value craft, speed, and people who can work at pace without losing quality.</div>
+        </div>
+
+        <div style="margin-bottom:36px;">
+          <div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:14px;">What we make</div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;">
+            <span style="font-size:11px;padding:4px 12px;border:1px solid var(--cream-dark);color:var(--ink-mid);">Brand campaigns</span>
+            <span style="font-size:11px;padding:4px 12px;border:1px solid var(--cream-dark);color:var(--ink-mid);">Creative advertising</span>
+            <span style="font-size:11px;padding:4px 12px;border:1px solid var(--cream-dark);color:var(--ink-mid);">OOH</span>
+            <span style="font-size:11px;padding:4px 12px;border:1px solid var(--cream-dark);color:var(--ink-mid);">Film & TV</span>
+            <span style="font-size:11px;padding:4px 12px;border:1px solid var(--cream-dark);color:var(--ink-mid);">Digital</span>
+            <span style="font-size:11px;padding:4px 12px;border:1px solid var(--cream-dark);color:var(--ink-mid);">Social</span>
+          </div>
+        </div>
+
+        <div style="margin-bottom:36px;">
+          <div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:14px;">How we hire freelancers</div>
+          <div style="font-size:14px;color:var(--ink-mid);line-height:1.8;">We typically hire art directors, copywriters, creative directors and strategists — often for campaign bursts of 2–8 weeks. We're a new agency that moves fast and backs creative ambition. Briefs are always clear. We pay on time.</div>
+        </div>
+
+        <div>
+          <div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:14px;">Through The Gallery</div>
+          <div style="background:var(--cream-mid);border:var(--bdr);padding:16px 20px;">
+            <div style="font-size:13px;color:var(--ink-mid);line-height:1.7;">Ace of Hearts is a new Gallery subscriber. As they build their roster, freelancers who express interest will appear in their weekly talent digest — curated by specialism and availability.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div style="display:flex;flex-direction:column;gap:14px;position:sticky;top:78px;">
+        <div style="background:white;border:var(--bdr);padding:18px 20px;">
+          <button class="studio-brief-btn" onclick="toast('Interest registered — you\'ll appear in Ace of Hearts\' next digest')">Express interest</button>
+          <button class="studio-follow-btn" onclick="this.textContent=this.textContent==='Follow studio'?'✓ Following':'Follow studio';this.style.borderColor=this.textContent==='✓ Following'?'var(--green)':'';this.style.color=this.textContent==='✓ Following'?'var(--green)':'';">Follow studio</button>
+          <div style="font-size:11px;color:var(--ink-faint);text-align:center;margin-top:10px;line-height:1.6;">Expressing interest adds you to their weekly digest of available talent.</div>
+        </div>
+        <div style="background:white;border:var(--bdr);padding:18px 20px;">
+          <h4 style="font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:12px;">Details</h4>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:var(--bdr);font-size:12px;"><span style="color:var(--ink-light);">Location</span><span style="color:var(--ink);font-weight:500;">London, UK</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:var(--bdr);font-size:12px;"><span style="color:var(--ink-light);">Founded</span><span style="color:var(--ink);font-weight:500;">2025</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:var(--bdr);font-size:12px;"><span style="color:var(--ink-light);">Founders</span><span style="color:var(--ink);font-weight:500;">McMorrow, Brim, Beverley</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:7px 0;font-size:12px;"><span style="color:var(--ink-light);">Gallery member</span><span style="color:var(--green);font-weight:500;">Since 2025</span></div>
+        </div>
+        <div style="background:white;border:var(--bdr);padding:18px 20px;">
+          <h4 style="font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:12px;">Links</h4>
+          <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--ink-mid);padding:9px 0;border-bottom:var(--bdr);cursor:pointer;" onclick="toast('aceofhearts.com')">
+            <div style="width:26px;height:26px;border-radius:50%;background:var(--cream-mid);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;">W</div>aceofhearts.com
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--ink-mid);padding:9px 0;border-bottom:var(--bdr);cursor:pointer;" onclick="toast('Opening Instagram')">
+            <div style="width:26px;height:26px;border-radius:50%;background:#fce4ec;color:#c2185b;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;">ig</div>@aceofheartsldn
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--ink-mid);padding:9px 0;cursor:pointer;" onclick="toast('Opening LinkedIn')">
+            <div style="width:26px;height:26px;border-radius:50%;background:#e3f2fd;color:#1565c0;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;">in</div>Ace of Hearts
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 02: Talent profile -->
+  <div id="hiw-talent" style="border-bottom:var(--bdr);">
+    <div style="max-width:1200px;margin:0 auto;padding:48px 36px 32px;display:flex;align-items:baseline;gap:20px;border-bottom:var(--bdr);">
+      <div style="font-family:var(--serif);font-size:64px;font-weight:300;color:var(--cream-dark);line-height:1;">02</div>
+      <div>
+        <h2 style="font-family:var(--serif);font-size:36px;font-weight:300;color:var(--ink);line-height:1;margin-bottom:6px;">Talent <em style="font-style:italic;color:var(--ink-light)">profile.</em></h2>
+        <p style="font-size:13px;color:var(--ink-light);max-width:560px;line-height:1.7;">Every freelancer on The Gallery has a profile showing their work, specialisms, experience, and — most importantly — their live availability signal. Studios can send a brief directly, save them to a watchlist, or get notified the moment they're free.</p>
+      </div>
+    </div>
+
+    <!-- JESS HARTLEY PROFILE INLINE (simplified, no edit mode) -->
+    <div style="max-width:1200px;margin:0 auto;padding:48px 36px 64px;display:grid;grid-template-columns:1fr 320px;gap:60px;align-items:start;">
+      <div>
+        <!-- Head -->
+        <div style="display:flex;align-items:flex-start;gap:24px;margin-bottom:32px;padding-bottom:32px;border-bottom:var(--bdr);">
+          <div style="width:72px;height:72px;border-radius:50%;background:var(--cream-mid);border:var(--bdr);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:24px;font-weight:300;color:var(--ink-mid);flex-shrink:0;">JH</div>
+          <div style="flex:1">
+            <div style="font-family:var(--serif);font-size:40px;font-weight:300;color:var(--ink);line-height:1;margin-bottom:6px;">Jess Hartley</div>
+            <div style="font-size:14px;color:var(--ink-light);margin-bottom:8px;">Art Director</div>
+            <a href="https://jessicahartley.com" target="_blank" style="font-size:12px;color:var(--green);border-bottom:1px solid rgba(42,122,74,.3);text-decoration:none;margin-bottom:10px;display:inline-block;">jessicahartley.com →</a>
+            <div style="display:flex;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--ink-light);">
+              <span>London, UK</span><span style="width:4px;height:4px;border-radius:50%;background:var(--cream-dark);align-self:center;"></span><span>10 years experience</span><span style="width:4px;height:4px;border-radius:50%;background:var(--cream-dark);align-self:center;"></span><span>£550/day</span>
+            </div>
+            <div style="margin-top:10px;display:inline-flex;align-items:center;gap:6px;padding:4px 10px;background:var(--ink);color:var(--cream);font-size:10px;letter-spacing:.07em;text-transform:uppercase;">★ Gallery Verified</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:7px;padding:6px 14px;background:var(--green-soft);border:1px solid rgba(42,122,74,.2);font-size:12px;font-weight:500;color:var(--green);flex-shrink:0;">
+            <div style="width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 2px var(--green-soft);"></div>Available now
+          </div>
+        </div>
+
+        <!-- Availability -->
+        <div style="margin-bottom:36px;">
+          <div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:12px;">Availability</div>
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+            <div style="width:10px;height:10px;border-radius:50%;background:var(--green);box-shadow:0 0 0 2px var(--green-soft);"></div>
+            <span style="font-size:14px;font-weight:500;color:var(--green);">Available now</span>
+          </div>
+          <div style="font-size:12px;color:var(--ink-light);">Status updated today · Next reminder in 14 days</div>
+        </div>
+
+        <!-- Bio -->
+        <div style="margin-bottom:36px;">
+          <div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:12px;">About</div>
+          <div style="font-size:15px;color:var(--ink-mid);line-height:1.8;">Senior art director with ten years across brand, campaigns and digital. Known for clean thinking, considered craft, and knowing when to push and when to pull back. Comfortable leading creative from brief to final output — with or without a team around me.<br><br>Previously: Mother, Uncommon, VCCP. Clients include Nike, Guinness, Barclays, The Guardian.</div>
+        </div>
+
+        <!-- Specialisms -->
+        <div style="margin-bottom:36px;">
+          <div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:12px;">Specialisms</div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;">
+            <span style="font-size:11px;padding:4px 12px;border:1px solid var(--cream-dark);color:var(--ink-mid);">Brand campaigns</span>
+            <span style="font-size:11px;padding:4px 12px;border:1px solid var(--cream-dark);color:var(--ink-mid);">OOH</span>
+            <span style="font-size:11px;padding:4px 12px;border:1px solid var(--cream-dark);color:var(--ink-mid);">Film & TV</span>
+            <span style="font-size:11px;padding:4px 12px;border:1px solid var(--cream-dark);color:var(--ink-mid);">Digital</span>
+            <span style="font-size:11px;padding:4px 12px;border:1px solid var(--cream-dark);color:var(--ink-mid);">Luxury</span>
+            <span style="font-size:11px;padding:4px 12px;border:1px solid var(--cream-dark);color:var(--ink-mid);">Social</span>
+          </div>
+        </div>
+
+        <!-- Selected work -->
+        <div style="margin-bottom:36px;">
+          <div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:12px;">Selected work</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;">
+            <div style="aspect-ratio:4/3;background:var(--ink);border:var(--bdr);display:flex;align-items:center;justify-content:center;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:rgba(249,246,241,.3);">Nike · 2024</div>
+            <div style="aspect-ratio:4/3;background:var(--cream-dark);border:var(--bdr);display:flex;align-items:center;justify-content:center;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-light);">Guinness · 2023</div>
+            <div style="aspect-ratio:4/3;background:var(--cream-mid);border:var(--bdr);display:flex;align-items:center;justify-content:center;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-faint);">Barclays · 2023</div>
+          </div>
+        </div>
+
+        <!-- Studios say -->
+        <div>
+          <div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:12px;">Studios say</div>
+          <div style="background:var(--cream-mid);border:var(--bdr);padding:16px 18px;margin-bottom:10px;">
+            <div style="font-family:var(--serif);font-size:16px;font-weight:300;font-style:italic;color:var(--ink);line-height:1.6;margin-bottom:10px;">"Jess ran the Nike brief with us — brought it in on time, the client loved her. Would book again without hesitation."</div>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <div style="width:22px;height:22px;border-radius:50%;background:var(--ink);display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:500;color:var(--cream);flex-shrink:0;">UC</div>
+              <div style="font-size:11px;color:var(--ink-light);"><strong style="color:var(--ink);font-weight:500;">Uncommon</strong> · Creative Director · Booked Jan 2025</div>
+            </div>
+          </div>
+          <div style="background:var(--cream-mid);border:var(--bdr);padding:16px 18px;">
+            <div style="font-family:var(--serif);font-size:16px;font-weight:300;font-style:italic;color:var(--ink);line-height:1.6;margin-bottom:10px;">"Exactly the kind of art director you want on a pitch. Fast, considered, no ego."</div>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <div style="width:22px;height:22px;border-radius:50%;background:var(--ink);display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:500;color:var(--cream);flex-shrink:0;">ML</div>
+              <div style="font-size:11px;color:var(--ink-light);"><strong style="color:var(--ink);font-weight:500;">Mother London</strong> · Creative Partner · Booked Oct 2024</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div style="display:flex;flex-direction:column;gap:16px;position:sticky;top:78px;">
+        <div style="background:white;border:var(--bdr);padding:20px;">
+          <button class="fl-contact-btn" onclick="toast('Brief sent to Jess')">Send a brief</button>
+          <button class="fl-save-btn" onclick="this.textContent=this.textContent==='Save & watch'?'✓ Saved':'Save & watch';this.style.borderColor=this.textContent==='✓ Saved'?'var(--green)':'';this.style.color=this.textContent==='✓ Saved'?'var(--green)':'';">Save & watch</button>
+          <div style="font-size:11px;color:var(--ink-faint);text-align:center;margin-top:8px;">Availability updated today</div>
+        </div>
+        <div style="background:white;border:var(--bdr);padding:20px;">
+          <h4 style="font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:14px;">Details</h4>
+          <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:var(--bdr);font-size:13px;"><span style="color:var(--ink-light);">Day rate</span><span style="color:var(--ink);font-weight:500;">£550/day</span></div>
+          <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:var(--bdr);font-size:13px;"><span style="color:var(--ink-light);">Location</span><span style="color:var(--ink);font-weight:500;">London, UK</span></div>
+          <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:var(--bdr);font-size:13px;"><span style="color:var(--ink-light);">Works</span><span style="color:var(--ink);font-weight:500;">On-site & remote</span></div>
+          <div style="display:flex;justify-content:space-between;padding:8px 0;font-size:13px;"><span style="color:var(--ink-light);">Notice</span><span style="color:var(--ink);font-weight:500;">Immediate</span></div>
+        </div>
+        <div style="background:white;border:var(--bdr);padding:20px;">
+          <h4 style="font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:14px;">On the platform</h4>
+          <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:var(--bdr);font-size:13px;"><span style="color:var(--ink-light);">Member since</span><span style="color:var(--ink);font-weight:500;">Jan 2025</span></div>
+          <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:var(--bdr);font-size:13px;"><span style="color:var(--ink-light);">Bookings</span><span style="color:var(--ink);font-weight:500;">4 confirmed</span></div>
+          <div style="display:flex;justify-content:space-between;padding:8px 0;font-size:13px;"><span style="color:var(--ink-light);">Response time</span><span style="color:var(--ink);font-weight:500;">Same day</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 03: Auto-responses -->
+  <div id="hiw-emails">
+    <div style="max-width:1200px;margin:0 auto;padding:48px 36px 32px;display:flex;align-items:baseline;gap:20px;border-bottom:var(--bdr);">
+      <div style="font-family:var(--serif);font-size:64px;font-weight:300;color:var(--cream-dark);line-height:1;">03</div>
+      <div>
+        <h2 style="font-family:var(--serif);font-size:36px;font-weight:300;color:var(--ink);line-height:1;margin-bottom:6px;">Auto-responses <em style="font-style:italic;color:var(--ink-light)">that feel human.</em></h2>
+        <p style="font-size:13px;color:var(--ink-light);max-width:560px;line-height:1.7;">The platform handles communication automatically — nudging freelancers to keep their availability fresh, alerting studios when their people are free again, and managing enquiries when someone is already booked. All written to feel like a person sent them.</p>
+      </div>
+    </div>
+
+    <div style="max-width:1200px;margin:0 auto;padding:40px 36px 80px;">
+      <div class="email-tabs" style="margin-bottom:0;">
+        <div class="email-tab on" onclick="emailTab(this,'hiw-fl-apply')">Freelancer applies</div>
+        <div class="email-tab" onclick="emailTab(this,'hiw-fl-approved')">Freelancer approved</div>
+        <div class="email-tab" onclick="emailTab(this,'hiw-studio-req')">Studio requests access</div>
+        <div class="email-tab" onclick="emailTab(this,'hiw-avail-nudge')">2-week nudge</div>
+        <div class="email-tab" onclick="emailTab(this,'hiw-studio-nudge')">Studio alert</div>
+        <div class="email-tab" onclick="emailTab(this,'hiw-booked')">Booked-up auto-reply</div>
+      </div>
+
+      <div class="email-content on" id="ec-hiw-fl-apply">
+        <div class="email-preview">
+          <div class="email-header">
+            <div class="email-field">To: <span>[First name] &lt;[email]&gt;</span></div>
+            <div class="email-field">From: <span>Sam at The Gallery &lt;sam@thegallery.global&gt;</span></div>
+            <div class="email-field">Subject: <span>Got your application, [first name].</span></div>
+          </div>
+          <div class="email-body">
+            <p>Hi [first name],</p>
+            <p>Thanks for applying to The Gallery. We've got your details and we'll review your portfolio properly — not a quick skim, an actual look.</p>
+            <p>We're selective because the studios we work with expect a certain standard. That's what makes being on here worth something.</p>
+            <p>You'll hear from us within 5 working days either way.</p>
+            <div class="email-sig"><strong>The Gallery</strong>The Gallery · hello@thegallery.global</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="email-content" id="ec-hiw-fl-approved">
+        <div class="email-preview">
+          <div class="email-header">
+            <div class="email-field">To: <span>[First name] &lt;[email]&gt;</span></div>
+            <div class="email-field">From: <span>Sam at The Gallery &lt;sam@thegallery.global&gt;</span></div>
+            <div class="email-field">Subject: <span>You're in, [first name].</span></div>
+          </div>
+          <div class="email-body">
+            <p>Hi [first name],</p>
+            <p>Your profile is live on The Gallery. Studios and agencies can now see you when they search.</p>
+            <p>One thing that makes a real difference: keeping your availability updated. Freelancers who do it regularly are 10× more likely to land the better briefs. It takes 10 seconds — just reply to this email with your window and we'll handle the rest.</p>
+            <p>Welcome to the list.</p>
+            <div class="email-sig"><strong>The Gallery</strong>The Gallery · hello@thegallery.global</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="email-content" id="ec-hiw-studio-req">
+        <div class="email-preview">
+          <div class="email-header">
+            <div class="email-field">To: <span>[Contact name] &lt;[email]&gt;</span></div>
+            <div class="email-field">From: <span>Sam at The Gallery &lt;sam@thegallery.global&gt;</span></div>
+            <div class="email-field">Subject: <span>The Gallery — your access is being set up.</span></div>
+          </div>
+          <div class="email-body">
+            <p>Hi [first name],</p>
+            <p>Thanks for getting in touch. We've got your request and we'll have your studio access set up within 24 hours.</p>
+            <p>If you have a specific brief you're trying to fill right now, just reply to this and I'll pull a shortlist together before your account goes live. Quicker than waiting.</p>
+            <p>Speak soon.</p>
+            <div class="email-sig"><strong>The Gallery</strong>The Gallery · hello@thegallery.global</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="email-content" id="ec-hiw-avail-nudge">
+        <div class="email-preview">
+          <div class="email-header">
+            <div class="email-field">To: <span>[First name] &lt;[email]&gt;</span></div>
+            <div class="email-field">From: <span>The Gallery &lt;update@thegallery.global&gt;</span></div>
+            <div class="email-field">Subject: <span>Quick one — are you free?</span></div>
+          </div>
+          <div class="email-body">
+            <p>Hi [first name],</p>
+            <p>Two weeks since your last update. Just reply with one of the following:</p>
+            <p style="font-weight:500;color:var(--ink);">· Available now<br>· Free in 1 week<br>· Free in 2 weeks<br>· Free in 4 weeks<br>· Booked up</p>
+            <p>That's it. We'll update your profile so studios searching right now can find you.</p>
+            <div class="email-sig"><strong>The Gallery</strong>update@thegallery.global</div>
+          </div>
+        </div>
+        <div style="margin-top:16px;padding:14px 16px;background:var(--cream-mid);border:var(--bdr);font-size:12px;color:var(--ink-light);line-height:1.7;"><strong style="color:var(--ink);">When this fires:</strong> Automatically every 14 days if the freelancer hasn't updated. They can reply directly to the email — the platform parses it and updates their status.</div>
+      </div>
+
+      <div class="email-content" id="ec-hiw-studio-nudge">
+        <div class="email-preview">
+          <div class="email-header">
+            <div class="email-field">To: <span>[Contact name] &lt;[studio email]&gt;</span></div>
+            <div class="email-field">From: <span>The Gallery &lt;alerts@thegallery.global&gt;</span></div>
+            <div class="email-field">Subject: <span>[First name] — who you worked with last year — is free in 2 weeks.</span></div>
+          </div>
+          <div class="email-body">
+            <p>Hi [contact name],</p>
+            <p>Just flagging — [freelancer name], who worked with you on [project], is free in two weeks.</p>
+            <p>Their status updated this morning. You're getting this because you saved them to your watchlist.</p>
+            <p>If you've got something coming up, now's the time to reach out — they tend to book up quickly once they update their status.</p>
+            <p><a style="color:var(--green);">View their profile →</a></p>
+            <div class="email-sig"><strong>The Gallery</strong>alerts@thegallery.global</div>
+          </div>
+        </div>
+        <div style="margin-top:16px;padding:14px 16px;background:var(--cream-mid);border:var(--bdr);font-size:12px;color:var(--ink-light);line-height:1.7;"><strong style="color:var(--ink);">When this fires:</strong> The moment a saved freelancer updates their status — or 2 weeks before their stated free date. Studios never miss the window.</div>
+      </div>
+
+      <div class="email-content" id="ec-hiw-booked">
+        <div class="email-preview">
+          <div class="email-header">
+            <div class="email-field">To: <span>[Studio contact] &lt;[studio email]&gt;</span></div>
+            <div class="email-field">From: <span>The Gallery &lt;noreply@thegallery.global&gt;</span></div>
+            <div class="email-field">Subject: <span>Re: [Freelancer name] — they're booked, but here's when they're free.</span></div>
+          </div>
+          <div class="email-body">
+            <p>Hi [contact name],</p>
+            <p>[Freelancer first name] is currently booked up until [expected free date]. They've seen your enquiry and we've logged it.</p>
+            <p>In the meantime, here are three freelancers with a similar profile who are available now:</p>
+            <div style="background:var(--cream-mid);padding:14px 16px;margin:12px 0;border-left:3px solid var(--cream-dark);">
+              <p style="margin:0;font-size:12px;font-weight:500;color:var(--ink);">[Similar freelancer 1] · [Role] · Available now</p>
+              <p style="margin:4px 0 0;font-size:12px;color:var(--ink-light);">[Similar freelancer 2] · [Role] · Free in 1 week</p>
+              <p style="margin:4px 0 0;font-size:12px;color:var(--ink-light);">[Similar freelancer 3] · [Role] · Free in 1 week</p>
+            </div>
+            <div class="email-sig"><strong>The Gallery</strong>hello@thegallery.global</div>
+          </div>
+        </div>
+        <div style="margin-top:16px;padding:14px 16px;background:var(--cream-mid);border:var(--bdr);font-size:12px;color:var(--ink-light);line-height:1.7;"><strong style="color:var(--ink);">When this fires:</strong> Automatically when a studio contacts a booked-up freelancer. No enquiry gets missed — and the studio gets alternatives immediately.</div>
+      </div>
+    </div>
+  </div>
+
+  <footer><span class="f-logo">The <em>Gallery</em></span><div class="f-links"><span class="f-link" onclick="show('faq')">FAQ</span><span class="f-link" onclick="show('privacy')">Privacy policy</span><span class="f-link" onclick="show('legal')">Legal</span><span class="f-note">hello@thegallery.global</span></div></footer>
+</div>
+
 </body>
 </html>
