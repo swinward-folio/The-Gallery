@@ -3055,6 +3055,19 @@ function jessToggleSave(){
   toast(jessSaved?'Jess saved — we\'ll alert you when her status changes':'Removed from your watchlist');
 }
 
+// emailTabGroup — handles multiple independent tab groups on the same page
+function emailTabGroup(el, id, groupId) {
+  const group = document.getElementById(groupId);
+  if (!group) return;
+  group.querySelectorAll('.email-tab').forEach(t => t.classList.remove('on'));
+  el.classList.add('on');
+  // find all email-content siblings in the parent container
+  const container = el.closest('.email-tabs').parentElement;
+  container.querySelectorAll('.email-content').forEach(c => c.classList.remove('on'));
+  const target = document.getElementById('ec-' + id);
+  if (target) target.classList.add('on');
+}
+
 // No init renders — show() handles rendering when pages become active
 </script>
 
@@ -3291,38 +3304,308 @@ function jessToggleSave(){
       <div style="font-family:var(--serif);font-size:64px;font-weight:300;color:var(--cream-dark);line-height:1;">03</div>
       <div>
         <h2 style="font-family:var(--serif);font-size:36px;font-weight:300;color:var(--ink);line-height:1;margin-bottom:6px;">Auto-responses <em style="font-style:italic;color:var(--ink-light)">that feel human.</em></h2>
-        <p style="font-size:13px;color:var(--ink-light);max-width:560px;line-height:1.7;">The platform handles communication automatically — nudging freelancers to keep their availability fresh, alerting studios when their people are free again, and managing enquiries when someone is already booked.</p>
+        <p style="font-size:13px;color:var(--ink-light);max-width:600px;line-height:1.7;">Every message states the issue, tells the recipient what to do, and sends them to the right place to fix it. No invitation to reply. No open-ended questions. One problem, one action, one link.</p>
       </div>
     </div>
-    <div style="max-width:1200px;margin:0 auto;padding:40px 36px 64px;">
-      <div class="email-tabs">
-        <div class="email-tab on" onclick="emailTab(this,'hiw-fl-apply')">Freelancer applies</div>
-        <div class="email-tab" onclick="emailTab(this,'hiw-fl-approved')">Freelancer approved</div>
-        <div class="email-tab" onclick="emailTab(this,'hiw-studio-req')">Studio requests access</div>
-        <div class="email-tab" onclick="emailTab(this,'hiw-avail-nudge')">2-week nudge</div>
-        <div class="email-tab" onclick="emailTab(this,'hiw-studio-nudge')">Studio alert</div>
-        <div class="email-tab" onclick="emailTab(this,'hiw-booked')">Booked-up auto-reply</div>
+
+    <div style="max-width:1200px;margin:0 auto;padding:40px 36px 0;">
+
+      <!-- Group 1: Vetting flags -->
+      <div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--amber);">Vetting flags — application bounced back</div>
+      <p style="font-size:13px;color:var(--ink-light);margin-bottom:24px;line-height:1.7;">These fire automatically when an application fails a required check. The applicant is directed to reapply — not to reply.</p>
+
+      <div class="email-tabs" id="vetting-tabs">
+        <div class="email-tab on" onclick="emailTabGroup(this,'hiw-v-portfolio','vetting-tabs')">No portfolio</div>
+        <div class="email-tab" onclick="emailTabGroup(this,'hiw-v-deadlink','vetting-tabs')">Dead link</div>
+        <div class="email-tab" onclick="emailTabGroup(this,'hiw-v-cv','vetting-tabs')">CV out of date</div>
+        <div class="email-tab" onclick="emailTabGroup(this,'hiw-v-specialisms','vetting-tabs')">Too many specialisms</div>
+        <div class="email-tab" onclick="emailTabGroup(this,'hiw-v-seniority','vetting-tabs')">Seniority mismatch</div>
+        <div class="email-tab" onclick="emailTabGroup(this,'hiw-v-dayrate','vetting-tabs')">Day rate implausible</div>
       </div>
-      <div class="email-content on" id="ec-hiw-fl-apply">
-        <div class="email-preview"><div class="email-header"><div class="email-field">To: <span>[First name] &lt;[email]&gt;</span></div><div class="email-field">From: <span>The Gallery &lt;hello@thegallery.global&gt;</span></div><div class="email-field">Subject: <span>Got your application, [first name].</span></div></div><div class="email-body"><p>Hi [first name],</p><p>Thanks for applying to The Gallery. We've got your details and we'll review your portfolio properly — not a quick skim, an actual look.</p><p>We're selective because the studios we work with expect a certain standard. That's what makes being on here worth something.</p><p>You'll hear from us within 5 working days either way.</p><div class="email-sig"><strong>The Gallery</strong>hello@thegallery.global</div></div></div>
+
+      <!-- No portfolio -->
+      <div class="email-content on" id="ec-hiw-v-portfolio">
+        <div class="email-preview">
+          <div class="email-header">
+            <div class="email-field">To: <span>[First name] &lt;[email]&gt;</span></div>
+            <div class="email-field">From: <span>The Gallery &lt;hello@thegallery.global&gt;</span></div>
+            <div class="email-field">Subject: <span>Your application — one thing missing.</span></div>
+          </div>
+          <div class="email-body">
+            <p>Thanks for applying to The Gallery.</p>
+            <p>We can't verify your work without a portfolio link or website — it's a requirement for all applicants. Please reapply with a link included.</p>
+            <div style="margin:20px 0;">
+              <a style="display:inline-block;background:var(--ink);color:var(--cream);font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:10px 22px;text-decoration:none;">Apply again →</a>
+            </div>
+            <div class="email-sig"><strong>The Gallery</strong>hello@thegallery.global</div>
+          </div>
+        </div>
+        <div style="margin-top:16px;padding:14px 16px;background:var(--cream-mid);border:var(--bdr);font-size:12px;color:var(--ink-light);line-height:1.7;"><strong style="color:var(--ink);">When this fires:</strong> Immediately on submission if the portfolio/website field is empty. No human review required.</div>
       </div>
-      <div class="email-content" id="ec-hiw-fl-approved">
-        <div class="email-preview"><div class="email-header"><div class="email-field">To: <span>[First name] &lt;[email]&gt;</span></div><div class="email-field">From: <span>The Gallery &lt;hello@thegallery.global&gt;</span></div><div class="email-field">Subject: <span>You're in, [first name].</span></div></div><div class="email-body"><p>Hi [first name],</p><p>Your profile is live on The Gallery. Studios and agencies can now see you when they search.</p><p>One thing that makes a real difference: keeping your availability updated. Freelancers who do it regularly are 10× more likely to land the better briefs. Just reply to this email with your window and we'll handle the rest.</p><p>Welcome to the list.</p><div class="email-sig"><strong>The Gallery</strong>hello@thegallery.global</div></div></div>
+
+      <!-- Dead link -->
+      <div class="email-content" id="ec-hiw-v-deadlink">
+        <div class="email-preview">
+          <div class="email-header">
+            <div class="email-field">To: <span>[First name] &lt;[email]&gt;</span></div>
+            <div class="email-field">From: <span>The Gallery &lt;hello@thegallery.global&gt;</span></div>
+            <div class="email-field">Subject: <span>Your application — your portfolio link isn't working.</span></div>
+          </div>
+          <div class="email-body">
+            <p>Thanks for applying to The Gallery.</p>
+            <p>The portfolio link you submitted isn't working — it may have a typo, or the page is currently down. We need to be able to view your work before we can consider your application.</p>
+            <p>Please reapply once your link is live and accessible.</p>
+            <div style="margin:20px 0;">
+              <a style="display:inline-block;background:var(--ink);color:var(--cream);font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:10px 22px;text-decoration:none;">Apply again →</a>
+            </div>
+            <div class="email-sig"><strong>The Gallery</strong>hello@thegallery.global</div>
+          </div>
+        </div>
+        <div style="margin-top:16px;padding:14px 16px;background:var(--cream-mid);border:var(--bdr);font-size:12px;color:var(--ink-light);line-height:1.7;"><strong style="color:var(--ink);">When this fires:</strong> Automatically — the system pings the submitted URL at the point of application. A 404 or timeout triggers this response.</div>
       </div>
-      <div class="email-content" id="ec-hiw-studio-req">
-        <div class="email-preview"><div class="email-header"><div class="email-field">To: <span>[Contact name] &lt;[email]&gt;</span></div><div class="email-field">From: <span>The Gallery &lt;hello@thegallery.global&gt;</span></div><div class="email-field">Subject: <span>The Gallery — your access is being set up.</span></div></div><div class="email-body"><p>Hi [first name],</p><p>Thanks for getting in touch. We've got your request and we'll have your studio access set up within 24 hours.</p><p>If you have a specific brief you're trying to fill right now, just reply to this and I'll pull a shortlist together before your account goes live. Quicker than waiting.</p><p>Speak soon.</p><div class="email-sig"><strong>The Gallery</strong>hello@thegallery.global</div></div></div>
+
+      <!-- CV out of date -->
+      <div class="email-content" id="ec-hiw-v-cv">
+        <div class="email-preview">
+          <div class="email-header">
+            <div class="email-field">To: <span>[First name] &lt;[email]&gt;</span></div>
+            <div class="email-field">From: <span>The Gallery &lt;hello@thegallery.global&gt;</span></div>
+            <div class="email-field">Subject: <span>Your application — your CV needs updating.</span></div>
+          </div>
+          <div class="email-body">
+            <p>Thanks for applying to The Gallery.</p>
+            <p>Your CV needs to show work from the last 6 months before we can list you — it's how we make sure every profile on the platform reflects where someone actually is right now, not where they were.</p>
+            <p>Please update your CV and reapply. Do not respond to this email with a new document — you'll need to go through the application form again.</p>
+            <div style="margin:20px 0;">
+              <a style="display:inline-block;background:var(--ink);color:var(--cream);font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:10px 22px;text-decoration:none;">Apply again →</a>
+            </div>
+            <div class="email-sig"><strong>The Gallery</strong>hello@thegallery.global</div>
+          </div>
+        </div>
+        <div style="margin-top:16px;padding:14px 16px;background:var(--cream-mid);border:var(--bdr);font-size:12px;color:var(--ink-light);line-height:1.7;"><strong style="color:var(--ink);">When this fires:</strong> On human review. The reviewer marks the CV as out of date in the admin panel — this response fires automatically.</div>
       </div>
-      <div class="email-content" id="ec-hiw-avail-nudge">
-        <div class="email-preview"><div class="email-header"><div class="email-field">To: <span>[First name] &lt;[email]&gt;</span></div><div class="email-field">From: <span>The Gallery &lt;update@thegallery.global&gt;</span></div><div class="email-field">Subject: <span>Quick one — are you free?</span></div></div><div class="email-body"><p>Hi [first name],</p><p>Two weeks since your last update. Just reply with one of the following:</p><p style="font-weight:500;color:var(--ink);">· Available now<br>· Free in 1 week<br>· Free in 2 weeks<br>· Free in 4 weeks<br>· Booked up</p><p>That's it. We'll update your profile so studios searching right now can find you.</p><div class="email-sig"><strong>The Gallery</strong>update@thegallery.global</div></div></div>
-        <div style="margin-top:16px;padding:14px 16px;background:var(--cream-mid);border:var(--bdr);font-size:12px;color:var(--ink-light);line-height:1.7;"><strong style="color:var(--ink);">When this fires:</strong> Automatically every 14 days. Freelancers can reply directly — the platform parses it and updates their status.</div>
+
+      <!-- Too many specialisms -->
+      <div class="email-content" id="ec-hiw-v-specialisms">
+        <div class="email-preview">
+          <div class="email-header">
+            <div class="email-field">To: <span>[First name] &lt;[email]&gt;</span></div>
+            <div class="email-field">From: <span>The Gallery &lt;hello@thegallery.global&gt;</span></div>
+            <div class="email-field">Subject: <span>Your application — let's narrow this down.</span></div>
+          </div>
+          <div class="email-body">
+            <p>Thanks for applying to The Gallery.</p>
+            <p>You've listed a broad range of specialisms. Studios search specifically — and a tighter list will actually get you in front of more of the right people, rather than fewer of the wrong ones. We ask applicants to list a maximum of five.</p>
+            <p>Please reapply with your strongest three to five disciplines.</p>
+            <div style="margin:20px 0;">
+              <a style="display:inline-block;background:var(--ink);color:var(--cream);font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:10px 22px;text-decoration:none;">Apply again →</a>
+            </div>
+            <div class="email-sig"><strong>The Gallery</strong>hello@thegallery.global</div>
+          </div>
+        </div>
+        <div style="margin-top:16px;padding:14px 16px;background:var(--cream-mid);border:var(--bdr);font-size:12px;color:var(--ink-light);line-height:1.7;"><strong style="color:var(--ink);">When this fires:</strong> Automatically if more than 5 specialisms are selected on the application form.</div>
       </div>
-      <div class="email-content" id="ec-hiw-studio-nudge">
-        <div class="email-preview"><div class="email-header"><div class="email-field">To: <span>[Contact name] &lt;[studio email]&gt;</span></div><div class="email-field">From: <span>The Gallery &lt;alerts@thegallery.global&gt;</span></div><div class="email-field">Subject: <span>[First name] — who you worked with last year — is free in 2 weeks.</span></div></div><div class="email-body"><p>Hi [contact name],</p><p>Just flagging — [freelancer name], who worked with you on [project], is free in two weeks. Their status updated this morning.</p><p>If you've got something coming up, now's the time to reach out — they tend to book up quickly once they update their status.</p><p><a style="color:var(--green);">View their profile →</a></p><div class="email-sig"><strong>The Gallery</strong>alerts@thegallery.global</div></div></div>
-        <div style="margin-top:16px;padding:14px 16px;background:var(--cream-mid);border:var(--bdr);font-size:12px;color:var(--ink-light);line-height:1.7;"><strong style="color:var(--ink);">When this fires:</strong> The moment a saved freelancer updates their status — or 2 weeks before their stated free date.</div>
+
+      <!-- Seniority mismatch -->
+      <div class="email-content" id="ec-hiw-v-seniority">
+        <div class="email-preview">
+          <div class="email-header">
+            <div class="email-field">To: <span>[First name] &lt;[email]&gt;</span></div>
+            <div class="email-field">From: <span>The Gallery &lt;hello@thegallery.global&gt;</span></div>
+            <div class="email-field">Subject: <span>Your application — we'd like to see more recent work.</span></div>
+          </div>
+          <div class="email-body">
+            <p>Thanks for applying to The Gallery.</p>
+            <p>We'd like to see more recent work before we can list you — your portfolio doesn't quite reflect the seniority and day rate you've indicated. This isn't a rejection: we'd genuinely like to see you on the platform.</p>
+            <p>Please update your portfolio with your most recent work and reapply.</p>
+            <div style="margin:20px 0;">
+              <a style="display:inline-block;background:var(--ink);color:var(--cream);font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:10px 22px;text-decoration:none;">Apply again →</a>
+            </div>
+            <div class="email-sig"><strong>The Gallery</strong>hello@thegallery.global</div>
+          </div>
+        </div>
+        <div style="margin-top:16px;padding:14px 16px;background:var(--cream-mid);border:var(--bdr);font-size:12px;color:var(--ink-light);line-height:1.7;"><strong style="color:var(--ink);">When this fires:</strong> On human review — the reviewer judges that portfolio quality doesn't match claimed seniority or day rate.</div>
       </div>
-      <div class="email-content" id="ec-hiw-booked">
-        <div class="email-preview"><div class="email-header"><div class="email-field">To: <span>[Studio contact] &lt;[studio email]&gt;</span></div><div class="email-field">From: <span>The Gallery &lt;noreply@thegallery.global&gt;</span></div><div class="email-field">Subject: <span>Re: [Freelancer name] — they're booked, but here's when they're free.</span></div></div><div class="email-body"><p>Hi [contact name],</p><p>[Freelancer first name] is currently booked up until [expected free date]. They've seen your enquiry and we've logged it.</p><p>In the meantime, here are three freelancers with a similar profile who are available now:</p><div style="background:var(--cream-mid);padding:14px 16px;margin:12px 0;border-left:3px solid var(--cream-dark);"><p style="margin:0;font-size:12px;font-weight:500;color:var(--ink);">[Similar freelancer 1] · [Role] · Available now</p><p style="margin:4px 0 0;font-size:12px;color:var(--ink-light);">[Similar freelancer 2] · [Role] · Free in 1 week</p><p style="margin:4px 0 0;font-size:12px;color:var(--ink-light);">[Similar freelancer 3] · [Role] · Free in 1 week</p></div><div class="email-sig"><strong>The Gallery</strong>hello@thegallery.global</div></div></div>
-        <div style="margin-top:16px;padding:14px 16px;background:var(--cream-mid);border:var(--bdr);font-size:12px;color:var(--ink-light);line-height:1.7;"><strong style="color:var(--ink);">When this fires:</strong> Automatically when a studio contacts a booked-up freelancer. No enquiry gets missed.</div>
+
+      <!-- Day rate implausible -->
+      <div class="email-content" id="ec-hiw-v-dayrate">
+        <div class="email-preview">
+          <div class="email-header">
+            <div class="email-field">To: <span>[First name] &lt;[email]&gt;</span></div>
+            <div class="email-field">From: <span>The Gallery &lt;hello@thegallery.global&gt;</span></div>
+            <div class="email-field">Subject: <span>Your application — can you confirm your day rate?</span></div>
+          </div>
+          <div class="email-body">
+            <p>Thanks for applying to The Gallery.</p>
+            <p>The day rate you've listed looks like it may be a typo. Studios use this to filter searches — so it's important it's accurate. Please reapply with your correct day rate confirmed.</p>
+            <div style="margin:20px 0;">
+              <a style="display:inline-block;background:var(--ink);color:var(--cream);font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:10px 22px;text-decoration:none;">Apply again →</a>
+            </div>
+            <div class="email-sig"><strong>The Gallery</strong>hello@thegallery.global</div>
+          </div>
+        </div>
+        <div style="margin-top:16px;padding:14px 16px;background:var(--cream-mid);border:var(--bdr);font-size:12px;color:var(--ink-light);line-height:1.7;"><strong style="color:var(--ink);">When this fires:</strong> Automatically if the day rate submitted is below £150 or above £5,000 — outside the normal range for the platform.</div>
+      </div>
+
+    </div>
+
+    <!-- Group 2: Platform communications -->
+    <div style="max-width:1200px;margin:0 auto;padding:40px 36px 0;">
+      <div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--green);">Platform communications — approved members</div>
+      <p style="font-size:13px;color:var(--ink-light);margin-bottom:24px;line-height:1.7;">These go to freelancers and studios already on the platform. Warmer in tone — these are members, not applicants.</p>
+
+      <div class="email-tabs" id="platform-tabs">
+        <div class="email-tab on" onclick="emailTabGroup(this,'hiw-p-approved','platform-tabs')">Approved — pre-live</div>
+        <div class="email-tab" onclick="emailTabGroup(this,'hiw-p-avail','platform-tabs')">Availability nudge</div>
+        <div class="email-tab" onclick="emailTabGroup(this,'hiw-p-lapsed','platform-tabs')">Status lapsed</div>
+        <div class="email-tab" onclick="emailTabGroup(this,'hiw-p-studio-req','platform-tabs')">Studio access</div>
+        <div class="email-tab" onclick="emailTabGroup(this,'hiw-p-studio-alert','platform-tabs')">Studio alert</div>
+        <div class="email-tab" onclick="emailTabGroup(this,'hiw-p-booked','platform-tabs')">Booked-up reply</div>
+      </div>
+
+      <!-- Approved pre-live -->
+      <div class="email-content on" id="ec-hiw-p-approved">
+        <div class="email-preview">
+          <div class="email-header">
+            <div class="email-field">To: <span>[First name] &lt;[email]&gt;</span></div>
+            <div class="email-field">From: <span>The Gallery &lt;hello@thegallery.global&gt;</span></div>
+            <div class="email-field">Subject: <span>You're in. One thing before you go live.</span></div>
+          </div>
+          <div class="email-body">
+            <p>You're in.</p>
+            <p>Before your profile goes live, it's worth taking two minutes to check everything looks right. A complete profile — portfolio link, specific location, up-to-date CV — gets significantly more views than an incomplete one.</p>
+            <p>You have the option to review and edit it now before it goes live.</p>
+            <div style="margin:20px 0;">
+              <a style="display:inline-block;background:var(--ink);color:var(--cream);font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:10px 22px;text-decoration:none;margin-right:10px;">Review my profile →</a>
+              <a style="display:inline-block;background:transparent;color:var(--ink);font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:10px 22px;text-decoration:none;border:1px solid var(--cream-dark);">Go live now →</a>
+            </div>
+            <p style="font-size:12px;color:var(--ink-light);">Keeping your availability updated is the single most important thing you can do once you're live. Studios search by availability first — a stale status means you won't show up at all.</p>
+            <div class="email-sig"><strong>The Gallery</strong>hello@thegallery.global</div>
+          </div>
+        </div>
+        <div style="margin-top:16px;padding:14px 16px;background:var(--cream-mid);border:var(--bdr);font-size:12px;color:var(--ink-light);line-height:1.7;"><strong style="color:var(--ink);">When this fires:</strong> Immediately when an application is approved in the admin panel. Profile is held for 24 hours to allow edits before going live.</div>
+      </div>
+
+      <!-- Availability nudge -->
+      <div class="email-content" id="ec-hiw-p-avail">
+        <div class="email-preview">
+          <div class="email-header">
+            <div class="email-field">To: <span>[First name] &lt;[email]&gt;</span></div>
+            <div class="email-field">From: <span>The Gallery &lt;update@thegallery.global&gt;</span></div>
+            <div class="email-field">Subject: <span>Quick one — are you free?</span></div>
+          </div>
+          <div class="email-body">
+            <p>Two weeks since your last update.</p>
+            <p>Update your status now so studios searching today can find you. Takes ten seconds.</p>
+            <div style="margin:20px 0;display:grid;grid-template-columns:1fr 1fr;gap:8px;max-width:380px;">
+              <a style="display:block;text-align:center;background:var(--green);color:white;font-size:11px;letter-spacing:.05em;text-transform:uppercase;padding:10px;text-decoration:none;">Available now →</a>
+              <a style="display:block;text-align:center;background:var(--ink);color:var(--cream);font-size:11px;letter-spacing:.05em;text-transform:uppercase;padding:10px;text-decoration:none;">Update my status →</a>
+            </div>
+            <p style="font-size:12px;color:var(--ink-light);">Or reply to a WhatsApp or SMS nudge with your window — "free in 2 weeks", "booked until end of month" — and we'll handle the update automatically.</p>
+            <div class="email-sig"><strong>The Gallery</strong>update@thegallery.global</div>
+          </div>
+        </div>
+        <div style="margin-top:16px;padding:14px 16px;background:var(--cream-mid);border:var(--bdr);font-size:12px;color:var(--ink-light);line-height:1.7;"><strong style="color:var(--ink);">When this fires:</strong> Every 14 days since last update. WhatsApp and SMS versions are identical in intent — the AI parses the reply and updates status automatically.</div>
+      </div>
+
+      <!-- Status lapsed -->
+      <div class="email-content" id="ec-hiw-p-lapsed">
+        <div class="email-preview">
+          <div class="email-header">
+            <div class="email-field">To: <span>[First name] &lt;[email]&gt;</span></div>
+            <div class="email-field">From: <span>The Gallery &lt;update@thegallery.global&gt;</span></div>
+            <div class="email-field">Subject: <span>Your profile is currently hidden from search.</span></div>
+          </div>
+          <div class="email-body">
+            <p>Your profile has been hidden from search results — we haven't received an availability update in 6 weeks.</p>
+            <p>Studios searching right now can't see you. Update your status to reappear immediately.</p>
+            <div style="margin:20px 0;">
+              <a style="display:inline-block;background:var(--green);color:white;font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:10px 22px;text-decoration:none;">Update my status →</a>
+            </div>
+            <p style="font-size:12px;color:var(--ink-light);">Even "booked up" counts — it tells studios when to expect you back. A profile with any status is visible. A profile with no status is not.</p>
+            <div class="email-sig"><strong>The Gallery</strong>update@thegallery.global</div>
+          </div>
+        </div>
+        <div style="margin-top:16px;padding:14px 16px;background:var(--amber-soft);border:1px solid rgba(181,114,12,.2);font-size:12px;color:var(--amber);line-height:1.7;"><strong>When this fires:</strong> 6 weeks after the last availability update, if the standard 2-week and 4-week nudges have gone unanswered. Profile is automatically hidden at this point — visible again the moment they update.</div>
+      </div>
+
+      <!-- Studio access -->
+      <div class="email-content" id="ec-hiw-p-studio-req">
+        <div class="email-preview">
+          <div class="email-header">
+            <div class="email-field">To: <span>[Contact name] &lt;[email]&gt;</span></div>
+            <div class="email-field">From: <span>The Gallery &lt;hello@thegallery.global&gt;</span></div>
+            <div class="email-field">Subject: <span>The Gallery — your access is being set up.</span></div>
+          </div>
+          <div class="email-body">
+            <p>Thanks for getting in touch.</p>
+            <p>We've got your request and we'll have your studio access set up within 24 hours. You'll receive a separate email with your login details as soon as it's ready.</p>
+            <p>In the meantime — if you have a specific brief you're trying to fill right now, you can view available talent before your account is fully active.</p>
+            <div style="margin:20px 0;">
+              <a style="display:inline-block;background:var(--ink);color:var(--cream);font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:10px 22px;text-decoration:none;">Browse available talent →</a>
+            </div>
+            <div class="email-sig"><strong>The Gallery</strong>hello@thegallery.global</div>
+          </div>
+        </div>
+        <div style="margin-top:16px;padding:14px 16px;background:var(--cream-mid);border:var(--bdr);font-size:12px;color:var(--ink-light);line-height:1.7;"><strong style="color:var(--ink);">When this fires:</strong> Immediately on studio sign-up form submission. No reply invitation — the button goes to the talent browse page.</div>
+      </div>
+
+      <!-- Studio alert -->
+      <div class="email-content" id="ec-hiw-p-studio-alert">
+        <div class="email-preview">
+          <div class="email-header">
+            <div class="email-field">To: <span>[Contact name] &lt;[studio email]&gt;</span></div>
+            <div class="email-field">From: <span>The Gallery &lt;alerts@thegallery.global&gt;</span></div>
+            <div class="email-field">Subject: <span>[First name] — who you worked with on [project] — is free in 2 weeks.</span></div>
+          </div>
+          <div class="email-body">
+            <p>[Freelancer name] updated their availability this morning. They're free in two weeks.</p>
+            <p>You worked with them on [project] in [month]. You're getting this because you have them saved to your watchlist.</p>
+            <div style="margin:20px 0;background:var(--cream-mid);padding:14px 16px;border-left:3px solid var(--green);">
+              <p style="margin:0;font-size:13px;font-weight:500;color:var(--ink);">[Freelancer name] · [Role]</p>
+              <p style="margin:4px 0 0;font-size:12px;color:var(--ink-light);">Free from [date] · £[rate]/day · London</p>
+            </div>
+            <div style="margin:20px 0;">
+              <a style="display:inline-block;background:var(--ink);color:var(--cream);font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:10px 22px;text-decoration:none;">View profile →</a>
+            </div>
+            <p style="font-size:12px;color:var(--ink-light);">If the timing doesn't work, we'll alert you again the next time they update.</p>
+            <div class="email-sig"><strong>The Gallery</strong>alerts@thegallery.global</div>
+          </div>
+        </div>
+        <div style="margin-top:16px;padding:14px 16px;background:var(--cream-mid);border:var(--bdr);font-size:12px;color:var(--ink-light);line-height:1.7;"><strong style="color:var(--ink);">When this fires:</strong> The moment a watchlisted freelancer updates their status. If they were previously booked by this studio, the subject line calls that out specifically.</div>
+      </div>
+
+      <!-- Booked up reply -->
+      <div class="email-content" id="ec-hiw-p-booked">
+        <div class="email-preview">
+          <div class="email-header">
+            <div class="email-field">To: <span>[Studio contact] &lt;[studio email]&gt;</span></div>
+            <div class="email-field">From: <span>The Gallery &lt;noreply@thegallery.global&gt;</span></div>
+            <div class="email-field">Subject: <span>Re: [Freelancer name] — booked until [date], but here are three alternatives.</span></div>
+          </div>
+          <div class="email-body">
+            <p>[Freelancer first name] is currently booked up until [date]. Your enquiry has been logged — they'll see it when they're free.</p>
+            <p>In the meantime, three freelancers with a similar profile are available now:</p>
+            <div style="background:var(--cream-mid);padding:14px 16px;margin:12px 0;border-left:3px solid var(--cream-dark);display:flex;flex-direction:column;gap:8px;">
+              <div><p style="margin:0;font-size:12px;font-weight:500;color:var(--ink);">[Similar freelancer 1] · [Role] · <span style="color:var(--green);">Available now</span></p></div>
+              <div><p style="margin:0;font-size:12px;font-weight:500;color:var(--ink);">[Similar freelancer 2] · [Role] · <span style="color:var(--amber);">Free in 1 week</span></p></div>
+              <div><p style="margin:0;font-size:12px;font-weight:500;color:var(--ink);">[Similar freelancer 3] · [Role] · <span style="color:var(--amber);">Free in 1 week</span></p></div>
+            </div>
+            <div style="margin:20px 0;">
+              <a style="display:inline-block;background:var(--ink);color:var(--cream);font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:10px 22px;text-decoration:none;">View all available →</a>
+            </div>
+            <div class="email-sig"><strong>The Gallery</strong>noreply@thegallery.global</div>
+          </div>
+        </div>
+        <div style="margin-top:16px;padding:14px 16px;background:var(--cream-mid);border:var(--bdr);font-size:12px;color:var(--ink-light);line-height:1.7;"><strong style="color:var(--ink);">When this fires:</strong> Automatically when a studio contacts a freelancer marked as booked up. The enquiry is logged so the freelancer sees it when they become available — no contact is missed.</div>
+      </div>
+
+    </div>
+
+    <div style="max-width:1200px;margin:0 auto;padding:32px 36px 64px;">
+      <div style="background:var(--ink);padding:20px 24px;">
+        <div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:10px;">The principle behind every message</div>
+        <div style="font-family:var(--serif);font-size:18px;font-weight:300;font-style:italic;color:var(--cream);line-height:1.6;">"One problem stated clearly. One action required. One button. No invitation to reply."</div>
       </div>
     </div>
   </div>
