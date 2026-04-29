@@ -545,6 +545,16 @@ textarea.fi{resize:vertical;min-height:100px;}
   .stat-row{grid-template-columns:1fr;}
   .email-tabs{overflow-x:auto;}
 }
+
+/* JOIN DISCLAIMER MODAL */
+.disclaimer-check{display:flex;align-items:flex-start;gap:14px;padding:16px 18px;border:var(--bdr);background:white;margin-bottom:10px;}
+.disclaimer-check-icon{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;margin-top:1px;}
+.dc-portfolio{background:var(--green-soft);color:var(--green);}
+.dc-cv{background:var(--cream-mid);color:var(--ink-mid);}
+.dc-spec{background:var(--amber-soft);color:var(--amber);}
+.dc-head{font-size:13px;font-weight:500;color:var(--ink);margin-bottom:4px;}
+.dc-body{font-size:12px;color:var(--ink-light);line-height:1.7;}
+
 </style>
 </head>
 <body>
@@ -1863,6 +1873,11 @@ Previously: Mother, Uncommon, VCCP. Clients include Nike, Guinness, Barclays, Th
     <h2>How does the Gallery Verified badge work?</h2>
     <p>Verified status is earned by consistently updating your availability (at minimum every two weeks) for three or more months, and having at least one confirmed booking through the platform. It's awarded by us — you can't apply for it. Keep your status fresh and it'll come naturally.</p>
 
+    <h2>Who verifies applications?</h2>
+    <p>It's a two-stage process. First, a set of AI tools check the basics — whether a portfolio link is live, whether CV dates add up, whether anything required is missing. Then a member of The Gallery team reviews what's left and gives it the green light, making sure you're a real person and that your profile genuinely reflects what you've submitted.</p>
+    <p>Ultimately we want to give you the best possible shot at landing great work — that's the whole point of being on here. But we also owe it to the studios and brands on the platform to make sure everyone is who they say they are and that profiles live up to what's been submitted. That integrity is what makes the platform worth being on in the first place.</p>
+    <p>If you have a specific question about the process, feel free to reach out to <strong>info@thegallery.global</strong> and we'll do our best to help.</p>
+
     <h2>How does the availability ranking work?</h2>
     <p>Freelancers who update their status regularly surface higher in studio searches. We don't publish the exact algorithm — but the principle is simple: fresh signal = more visible. A profile that hasn't been updated in six weeks will rank below one updated this morning, all else being equal.</p>
 
@@ -2008,13 +2023,63 @@ Previously: Mother, Uncommon, VCCP. Clients include Nike, Guinness, Barclays, Th
         <div style="font-size:12px;color:var(--ink-light);line-height:1.6;margin-bottom:16px;">I'm a studio, agency or brand looking to hire vetted creative freelancers.</div>
         <div style="font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);border-bottom:1px solid var(--ink);display:inline-block;padding-bottom:2px;">Get access →</div>
       </div>
-      <div onclick="closeM('join-choice');openM('join')" style="border:var(--bdr);padding:24px 20px;cursor:pointer;transition:all .15s;text-align:center;" onmouseover="this.style.borderColor='var(--ink)'" onmouseout="this.style.borderColor='var(--cream-dark)'">
+      <div onclick="closeM('join-choice');openM('join-disclaimer')" style="border:var(--bdr);padding:24px 20px;cursor:pointer;transition:all .15s;text-align:center;" onmouseover="this.style.borderColor='var(--ink)'" onmouseout="this.style.borderColor='var(--cream-dark)'">
         <div style="font-family:var(--serif);font-size:32px;font-weight:300;color:var(--ink);margin-bottom:8px;">Freelancer</div>
         <div style="font-size:12px;color:var(--ink-light);line-height:1.6;margin-bottom:16px;">I'm a creative freelancer who wants to be visible to the best studios.</div>
         <div style="font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);border-bottom:1px solid var(--ink);display:inline-block;padding-bottom:2px;">Apply to join →</div>
       </div>
     </div>
     <p class="modal-note" style="margin-top:16px;">Studios subscribe from £499/month. The Gallery is free for freelancers.</p>
+  </div>
+</div>
+
+
+<!-- JOIN DISCLAIMER MODAL -->
+<div class="modal-bg" id="modal-join-disclaimer" onclick="bgClose(event,'join-disclaimer')">
+  <div class="modal modal-wide" style="max-width:520px;">
+    <button class="modal-x" onclick="closeM('join-disclaimer')">×</button>
+
+    <div style="margin-bottom:6px;">
+      <div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--green);margin-bottom:10px;">Before you apply</div>
+      <h3 style="font-family:var(--serif);font-size:28px;font-weight:300;line-height:1.2;margin-bottom:10px;">A minute of your time<br>now saves <em style="font-style:italic;color:var(--ink-light)">two later.</em></h3>
+      <p style="font-size:13px;color:var(--ink-mid);line-height:1.7;margin-bottom:20px;">The Gallery is invite-only and every application is reviewed. Anything missing or incorrect will be bounced back automatically — and you'll need to reapply. Please check the following before you submit.</p>
+    </div>
+
+    <div class="disclaimer-check">
+      <div class="disclaimer-check-icon dc-portfolio">✓</div>
+      <div>
+        <div class="dc-head">Portfolio or website link</div>
+        <div class="dc-body">Your link must be live and accessible right now — not a placeholder, not a page under construction. We can't review work we can't see. A broken link means an automatic bounce-back.</div>
+      </div>
+    </div>
+
+    <div class="disclaimer-check">
+      <div class="disclaimer-check-icon dc-cv">✓</div>
+      <div>
+        <div class="dc-head">CV up to date within 6 months</div>
+        <div class="dc-body">If your discipline relies on experience rather than a portfolio — strategists, producers, account handlers — your CV must show work from the last 6 months. Older than that and we'll ask you to update it before we can list you.</div>
+      </div>
+    </div>
+
+    <div class="disclaimer-check">
+      <div class="disclaimer-check-icon dc-spec">✓</div>
+      <div>
+        <div class="dc-head">Specialisms — your strongest three to five</div>
+        <div class="dc-body">Pick the disciplines you're actually known for and most likely to be booked for. A tight, accurate list gets you in front of the right studios. A long, broad one gets you in front of none of them. Maximum five.</div>
+      </div>
+    </div>
+
+    <div style="background:var(--cream-mid);border:var(--bdr);padding:14px 16px;margin:16px 0 20px;display:flex;align-items:flex-start;gap:12px;">
+      <div style="font-family:var(--serif);font-size:28px;font-weight:300;color:var(--green);line-height:1;flex-shrink:0;">→</div>
+      <div style="font-size:12px;color:var(--ink-mid);line-height:1.7;">Getting these right means we can review your application properly — and you won't have to go through this twice. We'd genuinely rather spend our time saying yes than sending bounce-backs.</div>
+    </div>
+
+    <div style="display:flex;align-items:flex-start;gap:12px;padding:14px 16px;border:var(--bdr);background:white;margin-bottom:14px;">
+      <input type="checkbox" id="disclaimer-consent" style="margin-top:3px;width:16px;height:16px;flex-shrink:0;accent-color:var(--ink);cursor:pointer;" onchange="handleDisclaimerConsent()">
+      <label for="disclaimer-consent" style="font-size:12px;color:var(--ink-mid);line-height:1.7;cursor:pointer;">I consent to The Gallery storing and using the information I submit in this application for the purpose of reviewing my application and, if approved, creating my profile on the platform. I understand my data will not be shared with third parties or used for any other purpose.</label>
+    </div>
+    <button class="btn-dark" style="width:100%;font-size:12px;padding:14px;opacity:.4;cursor:not-allowed;" id="disclaimer-cta" onclick="handleDisclaimerSubmit()" disabled>I've checked — let's go →</button>
+    <p style="font-size:11px;color:var(--ink-faint);text-align:center;margin-top:10px;line-height:1.6;">Applications reviewed within 5 working days. The Gallery is free for freelancers.</p>
   </div>
 </div>
 
@@ -3055,16 +3120,37 @@ function jessToggleSave(){
   toast(jessSaved?'Jess saved — we\'ll alert you when her status changes':'Removed from your watchlist');
 }
 
+// Disclaimer consent checkbox — enables CTA when ticked
+function handleDisclaimerConsent() {
+  var cb = document.getElementById('disclaimer-consent');
+  var btn = document.getElementById('disclaimer-cta');
+  if (!cb || !btn) return;
+  if (cb.checked) {
+    btn.style.opacity = '1';
+    btn.style.cursor = 'pointer';
+    btn.disabled = false;
+  } else {
+    btn.style.opacity = '.4';
+    btn.style.cursor = 'not-allowed';
+    btn.disabled = true;
+  }
+}
+function handleDisclaimerSubmit() {
+  var cb = document.getElementById('disclaimer-consent');
+  if (!cb || !cb.checked) return;
+  closeM('join-disclaimer');
+  openM('join');
+}
+
 // emailTabGroup — handles multiple independent tab groups on the same page
 function emailTabGroup(el, id, groupId) {
-  const group = document.getElementById(groupId);
+  var group = document.getElementById(groupId);
   if (!group) return;
-  group.querySelectorAll('.email-tab').forEach(t => t.classList.remove('on'));
+  group.querySelectorAll('.email-tab').forEach(function(t){t.classList.remove('on');});
   el.classList.add('on');
-  // find all email-content siblings in the parent container
-  const container = el.closest('.email-tabs').parentElement;
-  container.querySelectorAll('.email-content').forEach(c => c.classList.remove('on'));
-  const target = document.getElementById('ec-' + id);
+  var container = el.closest('.email-tabs').parentElement;
+  container.querySelectorAll('.email-content').forEach(function(c){c.classList.remove('on');});
+  var target = document.getElementById('ec-' + id);
   if (target) target.classList.add('on');
 }
 
