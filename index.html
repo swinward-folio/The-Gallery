@@ -3170,16 +3170,116 @@ function emailTabGroup(el, id, groupId) {
         <a href="#hiw-why" style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:9px 20px;border:1px solid rgba(249,246,241,.25);color:rgba(249,246,241,.7);text-decoration:none;" onmouseover="this.style.borderColor='rgba(249,246,241,.6)'" onmouseout="this.style.borderColor='rgba(249,246,241,.25)'">00 · Why use it</a>
         <a href="#hiw-studio" style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:9px 20px;border:1px solid rgba(249,246,241,.25);color:rgba(249,246,241,.7);text-decoration:none;" onmouseover="this.style.borderColor='rgba(249,246,241,.6)'" onmouseout="this.style.borderColor='rgba(249,246,241,.25)'">01 · Studio profile</a>
         <a href="#hiw-talent" style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:9px 20px;border:1px solid rgba(249,246,241,.25);color:rgba(249,246,241,.7);text-decoration:none;" onmouseover="this.style.borderColor='rgba(249,246,241,.6)'" onmouseout="this.style.borderColor='rgba(249,246,241,.25)'">02 · Talent profile</a>
+        <a href="#hiw-contents" style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:9px 20px;border:1px solid rgba(249,246,241,.25);color:rgba(249,246,241,.7);text-decoration:none;" onmouseover="this.style.borderColor='rgba(249,246,241,.6)'" onmouseout="this.style.borderColor='rgba(249,246,241,.25)'">00 · Contents</a>
         <a href="#hiw-emails" style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:9px 20px;border:1px solid rgba(249,246,241,.25);color:rgba(249,246,241,.7);text-decoration:none;" onmouseover="this.style.borderColor='rgba(249,246,241,.6)'" onmouseout="this.style.borderColor='rgba(249,246,241,.25)'">03 · Auto-responses</a>
-        <a href="#hiw-flow" style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:9px 20px;border:1px solid rgba(249,246,241,.25);color:rgba(249,246,241,.7);text-decoration:none;" onmouseover="this.style.borderColor='rgba(249,246,241,.6)'" onmouseout="this.style.borderColor='rgba(249,246,241,.25)'">04 · The flows</a>
-        <a href="#hiw-think" style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:9px 20px;border:1px solid rgba(249,246,241,.25);color:rgba(249,246,241,.7);text-decoration:none;" onmouseover="this.style.borderColor='rgba(249,246,241,.6)'" onmouseout="this.style.borderColor='rgba(249,246,241,.25)'">05 · Open questions</a>
-        <a href="#hiw-finance" style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:9px 20px;border:1px solid rgba(249,246,241,.25);color:rgba(249,246,241,.7);text-decoration:none;" onmouseover="this.style.borderColor='rgba(249,246,241,.6)'" onmouseout="this.style.borderColor='rgba(249,246,241,.25)'">06 · Financials</a>
-        <a href="#hiw-brand" style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:9px 20px;border:1px solid rgba(249,246,241,.25);color:rgba(249,246,241,.7);text-decoration:none;" onmouseover="this.style.borderColor='rgba(249,246,241,.6)'" onmouseout="this.style.borderColor='rgba(249,246,241,.25)'">07 · Brand</a>
+        <a href="#hiw-endorse" style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:9px 20px;border:1px solid rgba(249,246,241,.25);color:rgba(249,246,241,.7);text-decoration:none;" onmouseover="this.style.borderColor='rgba(249,246,241,.6)'" onmouseout="this.style.borderColor='rgba(249,246,241,.25)'">04 · Endorsements</a>
+        <a href="#hiw-flow" style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:9px 20px;border:1px solid rgba(249,246,241,.25);color:rgba(249,246,241,.7);text-decoration:none;" onmouseover="this.style.borderColor='rgba(249,246,241,.6)'" onmouseout="this.style.borderColor='rgba(249,246,241,.25)'">05 · The flows</a>
+        <a href="#hiw-think" style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:9px 20px;border:1px solid rgba(249,246,241,.25);color:rgba(249,246,241,.7);text-decoration:none;" onmouseover="this.style.borderColor='rgba(249,246,241,.6)'" onmouseout="this.style.borderColor='rgba(249,246,241,.25)'">06 · Open questions</a>
+        <a href="#hiw-finance" style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:9px 20px;border:1px solid rgba(249,246,241,.25);color:rgba(249,246,241,.7);text-decoration:none;" onmouseover="this.style.borderColor='rgba(249,246,241,.6)'" onmouseout="this.style.borderColor='rgba(249,246,241,.25)'">07 · Financials</a>
+        <a href="#hiw-brand" style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:9px 20px;border:1px solid rgba(249,246,241,.25);color:rgba(249,246,241,.7);text-decoration:none;" onmouseover="this.style.borderColor='rgba(249,246,241,.6)'" onmouseout="this.style.borderColor='rgba(249,246,241,.25)'">08 · Brand & community</a>
       </div>
     </div>
   </div>
 
   <!-- 00: WHY -->
+
+  <!-- 00 CONTENTS -->
+  <div id="hiw-contents" style="border-bottom:var(--bdr);">
+    <div style="max-width:1200px;margin:0 auto;padding:64px 36px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;">
+      <div>
+        <div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:12px;">How it works</div>
+        <h2 style="font-family:var(--serif);font-size:42px;font-weight:300;line-height:1.15;color:var(--ink);margin-bottom:20px;">Everything you need<br><em style="font-style:italic;color:var(--ink-light);">to understand The Gallery.</em></h2>
+        <p style="font-size:13px;color:var(--ink-mid);line-height:1.8;max-width:420px;">This page is for anyone who wants to understand how The Gallery actually works — the product, the process, the principles, and the positioning. Jump to any section below.</p>
+      </div>
+      <div>
+        <div style="display:flex;flex-direction:column;gap:2px;">
+
+          <a href="#hiw-why" style="display:flex;align-items:baseline;gap:16px;padding:14px 0;border-bottom:0.5px solid var(--cream-dark);text-decoration:none;group:true;" onmouseover="this.querySelector('.cnt-arrow').style.transform='translateX(4px)'" onmouseout="this.querySelector('.cnt-arrow').style.transform='translateX(0)'">
+            <span style="font-family:var(--serif);font-size:13px;color:var(--ink-faint);width:28px;flex-shrink:0;">01</span>
+            <span style="flex:1;">
+              <span style="display:block;font-size:13px;font-weight:500;color:var(--ink);margin-bottom:2px;">Why The Gallery</span>
+              <span style="display:block;font-size:11px;color:var(--ink-light);">The problem with how studios currently hire freelancers.</span>
+            </span>
+            <span class="cnt-arrow" style="font-size:16px;color:var(--ink-faint);transition:transform .2s;">→</span>
+          </a>
+
+          <a href="#hiw-studio" style="display:flex;align-items:baseline;gap:16px;padding:14px 0;border-bottom:0.5px solid var(--cream-dark);text-decoration:none;" onmouseover="this.querySelector('.cnt-arrow').style.transform='translateX(4px)'" onmouseout="this.querySelector('.cnt-arrow').style.transform='translateX(0)'">
+            <span style="font-family:var(--serif);font-size:13px;color:var(--ink-faint);width:28px;flex-shrink:0;">02</span>
+            <span style="flex:1;">
+              <span style="display:block;font-size:13px;font-weight:500;color:var(--ink);margin-bottom:2px;">For studios & brands</span>
+              <span style="display:block;font-size:11px;color:var(--ink-light);">How a studio finds, contacts and books a freelancer.</span>
+            </span>
+            <span class="cnt-arrow" style="font-size:16px;color:var(--ink-faint);transition:transform .2s;">→</span>
+          </a>
+
+          <a href="#hiw-talent" style="display:flex;align-items:baseline;gap:16px;padding:14px 0;border-bottom:0.5px solid var(--cream-dark);text-decoration:none;" onmouseover="this.querySelector('.cnt-arrow').style.transform='translateX(4px)'" onmouseout="this.querySelector('.cnt-arrow').style.transform='translateX(0)'">
+            <span style="font-family:var(--serif);font-size:13px;color:var(--ink-faint);width:28px;flex-shrink:0;">02b</span>
+            <span style="flex:1;">
+              <span style="display:block;font-size:13px;font-weight:500;color:var(--ink);margin-bottom:2px;">For freelancers & talent</span>
+              <span style="display:block;font-size:11px;color:var(--ink-light);">The application process, the availability signal, and what being on The Gallery means.</span>
+            </span>
+            <span class="cnt-arrow" style="font-size:16px;color:var(--ink-faint);transition:transform .2s;">→</span>
+          </a>
+
+          <a href="#hiw-emails" style="display:flex;align-items:baseline;gap:16px;padding:14px 0;border-bottom:0.5px solid var(--cream-dark);text-decoration:none;" onmouseover="this.querySelector('.cnt-arrow').style.transform='translateX(4px)'" onmouseout="this.querySelector('.cnt-arrow').style.transform='translateX(0)'">
+            <span style="font-family:var(--serif);font-size:13px;color:var(--ink-faint);width:28px;flex-shrink:0;">03</span>
+            <span style="flex:1;">
+              <span style="display:block;font-size:13px;font-weight:500;color:var(--ink);margin-bottom:2px;">Auto-responses</span>
+              <span style="display:block;font-size:11px;color:var(--ink-light);">Vetting flags, platform communications, and the principle behind every message.</span>
+            </span>
+            <span class="cnt-arrow" style="font-size:16px;color:var(--ink-faint);transition:transform .2s;">→</span>
+          </a>
+
+          <a href="#hiw-endorse" style="display:flex;align-items:baseline;gap:16px;padding:14px 0;border-bottom:0.5px solid var(--cream-dark);text-decoration:none;" onmouseover="this.querySelector('.cnt-arrow').style.transform='translateX(4px)'" onmouseout="this.querySelector('.cnt-arrow').style.transform='translateX(0)'">
+            <span style="font-family:var(--serif);font-size:13px;color:var(--ink-faint);width:28px;flex-shrink:0;">04</span>
+            <span style="flex:1;">
+              <span style="display:block;font-size:13px;font-weight:500;color:var(--ink);margin-bottom:2px;">Endorsements & accountability</span>
+              <span style="display:block;font-size:11px;color:var(--ink-light);">How trust is built, verified, and protected — for studios and freelancers alike.</span>
+            </span>
+            <span class="cnt-arrow" style="font-size:16px;color:var(--ink-faint);transition:transform .2s;">→</span>
+          </a>
+
+          <a href="#hiw-flow" style="display:flex;align-items:baseline;gap:16px;padding:14px 0;border-bottom:0.5px solid var(--cream-dark);text-decoration:none;" onmouseover="this.querySelector('.cnt-arrow').style.transform='translateX(4px)'" onmouseout="this.querySelector('.cnt-arrow').style.transform='translateX(0)'">
+            <span style="font-family:var(--serif);font-size:13px;color:var(--ink-faint);width:28px;flex-shrink:0;">05</span>
+            <span style="flex:1;">
+              <span style="display:block;font-size:13px;font-weight:500;color:var(--ink);margin-bottom:2px;">The flows</span>
+              <span style="display:block;font-size:11px;color:var(--ink-light);">End-to-end journey maps for studios and freelancers.</span>
+            </span>
+            <span class="cnt-arrow" style="font-size:16px;color:var(--ink-faint);transition:transform .2s;">→</span>
+          </a>
+
+          <a href="#hiw-think" style="display:flex;align-items:baseline;gap:16px;padding:14px 0;border-bottom:0.5px solid var(--cream-dark);text-decoration:none;" onmouseover="this.querySelector('.cnt-arrow').style.transform='translateX(4px)'" onmouseout="this.querySelector('.cnt-arrow').style.transform='translateX(0)'">
+            <span style="font-family:var(--serif);font-size:13px;color:var(--ink-faint);width:28px;flex-shrink:0;">06</span>
+            <span style="flex:1;">
+              <span style="display:block;font-size:13px;font-weight:500;color:var(--ink);margin-bottom:2px;">Open questions</span>
+              <span style="display:block;font-size:11px;color:var(--ink-light);">What we're still working through.</span>
+            </span>
+            <span class="cnt-arrow" style="font-size:16px;color:var(--ink-faint);transition:transform .2s;">→</span>
+          </a>
+
+          <a href="#hiw-finance" style="display:flex;align-items:baseline;gap:16px;padding:14px 0;border-bottom:0.5px solid var(--cream-dark);text-decoration:none;" onmouseover="this.querySelector('.cnt-arrow').style.transform='translateX(4px)'" onmouseout="this.querySelector('.cnt-arrow').style.transform='translateX(0)'">
+            <span style="font-family:var(--serif);font-size:13px;color:var(--ink-faint);width:28px;flex-shrink:0;">07</span>
+            <span style="flex:1;">
+              <span style="display:block;font-size:13px;font-weight:500;color:var(--ink);margin-bottom:2px;">Financials</span>
+              <span style="display:block;font-size:11px;color:var(--ink-light);">Revenue model, pricing rationale, and the unit economics.</span>
+            </span>
+            <span class="cnt-arrow" style="font-size:16px;color:var(--ink-faint);transition:transform .2s;">→</span>
+          </a>
+
+          <a href="#hiw-brand" style="display:flex;align-items:baseline;gap:16px;padding:14px 0;text-decoration:none;" onmouseover="this.querySelector('.cnt-arrow').style.transform='translateX(4px)'" onmouseout="this.querySelector('.cnt-arrow').style.transform='translateX(0)'">
+            <span style="font-family:var(--serif);font-size:13px;color:var(--ink-faint);width:28px;flex-shrink:0;">08</span>
+            <span style="flex:1;">
+              <span style="display:block;font-size:13px;font-weight:500;color:var(--ink);margin-bottom:2px;">Brand & community</span>
+              <span style="display:block;font-size:11px;color:var(--ink-light);">Tone of voice, channel strategy, giving back to the freelance community, and the insight layer for studios.</span>
+            </span>
+            <span class="cnt-arrow" style="font-size:16px;color:var(--ink-faint);transition:transform .2s;">→</span>
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div id="hiw-why" style="max-width:1200px;margin:0 auto;padding:64px 36px;border-bottom:var(--bdr);">
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;">
       <div>
@@ -3697,6 +3797,142 @@ function emailTabGroup(el, id, groupId) {
   </div>
 
   <!-- 04: FLOWS -->
+
+  <!-- 04 ENDORSEMENTS & ACCOUNTABILITY -->
+  <div id="hiw-endorse" style="border-bottom:var(--bdr);">
+    <div style="max-width:1200px;margin:0 auto;padding:48px 36px 32px;display:flex;align-items:baseline;gap:20px;border-bottom:var(--bdr);">
+      <div style="font-family:var(--serif);font-size:64px;font-weight:300;color:var(--cream-dark);line-height:1;">04</div>
+      <div>
+        <h2 style="font-family:var(--serif);font-size:36px;font-weight:300;color:var(--ink);line-height:1;margin-bottom:6px;">Endorsements <em style="font-style:italic;color:var(--ink-light)">& accountability.</em></h2>
+        <p style="font-size:13px;color:var(--ink-light);max-width:600px;line-height:1.7;">Being on The Gallery means something. That meaning has to be defensible — for studios who rely on it, and for freelancers whose reputations depend on the company they keep.</p>
+      </div>
+    </div>
+
+    <div style="max-width:1200px;margin:0 auto;padding:48px 36px;display:grid;grid-template-columns:1fr 1fr;gap:60px;border-bottom:var(--bdr);">
+      <div>
+        <div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:20px;padding-bottom:12px;border-bottom:var(--bdr);">The three-layer trust model</div>
+        <p style="font-size:13px;color:var(--ink-mid);line-height:1.8;margin-bottom:24px;">Trust on The Gallery isn't self-declared. It's built in layers — each one harder to fake than the last.</p>
+
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <div style="padding:18px 20px;background:white;border:var(--bdr);border-left:3px solid var(--cream-dark);">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+              <div style="font-family:var(--serif);font-size:20px;color:var(--ink-faint);">01</div>
+              <div style="font-size:13px;font-weight:500;color:var(--ink);">Application reference</div>
+            </div>
+            <p style="font-size:12px;color:var(--ink-light);line-height:1.7;margin-bottom:8px;">Every applicant submits one named professional reference. The Gallery contacts them directly with three questions: did you work together, in what capacity, would you hire again.</p>
+            <div style="font-size:11px;color:var(--ink-faint);letter-spacing:.04em;">Required for all applicants · No self-submitted testimonials</div>
+          </div>
+
+          <div style="padding:18px 20px;background:white;border:var(--bdr);border-left:3px solid var(--cream-dark);">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+              <div style="font-family:var(--serif);font-size:20px;color:var(--ink-faint);">02</div>
+              <div style="font-size:13px;font-weight:500;color:var(--ink);">LinkedIn endorsements</div>
+            </div>
+            <p style="font-size:12px;color:var(--ink-light);line-height:1.7;margin-bottom:8px;">Existing LinkedIn recommendations from named professionals. Public, named, cross-referenceable against stated work history.</p>
+            <div style="font-size:11px;color:var(--ink-faint);letter-spacing:.04em;">Encouraged at application · Weighted positively in review</div>
+          </div>
+
+          <div style="padding:18px 20px;background:var(--green-soft);border:var(--bdr);border-left:3px solid var(--green);">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+              <div style="font-family:var(--serif);font-size:20px;color:var(--green);">03</div>
+              <div style="font-size:13px;font-weight:500;color:var(--ink);">Platform booking endorsements</div>
+              <div style="font-size:10px;letter-spacing:.06em;text-transform:uppercase;background:var(--ink);color:var(--cream);padding:3px 8px;border-radius:2px;">Strongest signal</div>
+            </div>
+            <p style="font-size:12px;color:var(--ink-mid);line-height:1.7;margin-bottom:8px;">Post-booking endorsements left by studios through The Gallery after a confirmed placement. Tied to a real transaction — cannot be submitted without a confirmed booking on record.</p>
+            <div style="font-size:11px;color:var(--green);letter-spacing:.04em;">Earned over time · Feeds into Gallery Verified status</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:20px;padding-bottom:12px;border-bottom:var(--bdr);">The flags system</div>
+        <p style="font-size:13px;color:var(--ink-mid);line-height:1.8;margin-bottom:24px;">Exclusivity requires consequences. Being on The Gallery means something — and that meaning has to hold when things go wrong.</p>
+
+        <div style="display:flex;flex-direction:column;gap:2px;margin-bottom:28px;">
+          <div style="display:grid;grid-template-columns:80px 1fr;gap:0;background:white;border:var(--bdr);">
+            <div style="background:var(--cream-mid);padding:14px 16px;display:flex;align-items:center;justify-content:center;border-right:var(--bdr);">
+              <div style="font-size:11px;font-weight:500;color:var(--ink);text-align:center;letter-spacing:.04em;">1 flag</div>
+            </div>
+            <div style="padding:12px 16px;">
+              <div style="font-size:12px;font-weight:500;color:var(--ink);margin-bottom:3px;">Logged. Monitor.</div>
+              <div style="font-size:11px;color:var(--ink-light);line-height:1.6;">Freelancer not informed. Gallery team notes it and monitors next booking.</div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:80px 1fr;gap:0;background:white;border:var(--bdr);">
+            <div style="background:var(--amber-soft);padding:14px 16px;display:flex;align-items:center;justify-content:center;border-right:var(--bdr);">
+              <div style="font-size:11px;font-weight:500;color:var(--amber);text-align:center;letter-spacing:.04em;">2 flags</div>
+            </div>
+            <div style="padding:12px 16px;">
+              <div style="font-size:12px;font-weight:500;color:var(--ink);margin-bottom:3px;">Review. Conversation.</div>
+              <div style="font-size:11px;color:var(--ink-light);line-height:1.6;">Freelancer contacted directly. Profile, portfolio, and booking history reviewed by The Gallery team.</div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:80px 1fr;gap:0;background:white;border:var(--bdr);">
+            <div style="background:var(--ink);padding:14px 16px;display:flex;align-items:center;justify-content:center;border-right:var(--bdr);">
+              <div style="font-size:11px;font-weight:500;color:var(--cream);text-align:center;letter-spacing:.04em;">3 flags</div>
+            </div>
+            <div style="padding:12px 16px;">
+              <div style="font-size:12px;font-weight:500;color:var(--ink);margin-bottom:3px;">Removed. Final.</div>
+              <div style="font-size:11px;color:var(--ink-light);line-height:1.6;">Freelancer removed from the platform. Studios who have them saved are notified. No appeal.</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="padding:20px 24px;background:var(--ink);">
+          <div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:10px;">Exclusivity is the product</div>
+          <p style="font-family:var(--serif);font-size:16px;font-weight:300;font-style:italic;color:var(--cream);line-height:1.6;margin-bottom:12px;">"We accept around 1 in 4 applicants. That number is a trust signal — it tells studios that being here means something."</p>
+          <div style="font-size:11px;color:var(--ink-faint);">Studios can also flag freelancers. Freelancers can flag studios. The accountability runs both ways.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Brand building for partners -->
+    <div style="max-width:1200px;margin:0 auto;padding:48px 36px 64px;">
+      <div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:8px;">Brand building for our partners</div>
+      <h3 style="font-family:var(--serif);font-size:26px;font-weight:300;color:var(--ink);margin-bottom:20px;">What being on The Gallery <em style="font-style:italic;">gives back.</em></h3>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;">
+
+        <div style="padding:20px 22px;background:white;border:var(--bdr);">
+          <div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--green);margin-bottom:10px;">For freelancers</div>
+          <div style="font-size:13px;font-weight:500;color:var(--ink);margin-bottom:8px;">Rate benchmarking reports</div>
+          <p style="font-size:12px;color:var(--ink-light);line-height:1.7;">Anonymised data on what each discipline commands — by seniority, location, specialism. Published monthly to all platform members. No other source has this data.</p>
+        </div>
+
+        <div style="padding:20px 22px;background:white;border:var(--bdr);">
+          <div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--green);margin-bottom:10px;">For freelancers</div>
+          <div style="font-size:13px;font-weight:500;color:var(--ink);margin-bottom:8px;">Availability insights</div>
+          <p style="font-size:12px;color:var(--ink-light);line-height:1.7;">Personal data that shows how your update behaviour affects your visibility. "Freelancers who update every 14 days get 3× more profile views." Turns the signal from a rule into a tool.</p>
+        </div>
+
+        <div style="padding:20px 22px;background:white;border:var(--bdr);">
+          <div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:10px;">For studios</div>
+          <div style="font-size:13px;font-weight:500;color:var(--ink);margin-bottom:8px;">Monthly intelligence digest</div>
+          <p style="font-size:12px;color:var(--ink-light);line-height:1.7;">Which disciplines are most in demand, hardest to find, and trending. Published on the 1st of each month. Helps studios plan 4–6 weeks ahead, not just react to immediate gaps.</p>
+        </div>
+
+        <div style="padding:20px 22px;background:white;border:var(--bdr);">
+          <div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:10px;">For studios</div>
+          <div style="font-size:13px;font-weight:500;color:var(--ink);margin-bottom:8px;">"Your bench" report</div>
+          <p style="font-size:12px;color:var(--ink-light);line-height:1.7;">Quarterly email listing every freelancer the studio has previously booked, with their current availability status. Automated institutional memory — no more losing track of people who worked.</p>
+        </div>
+
+        <div style="padding:20px 22px;background:white;border:var(--bdr);">
+          <div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:10px;">For both</div>
+          <div style="font-size:13px;font-weight:500;color:var(--ink);margin-bottom:8px;">Quarterly market report</div>
+          <p style="font-size:12px;color:var(--ink-light);line-height:1.7;">State of the freelance market — rates, demand patterns, availability trends. Published publicly. The Gallery becomes the authority on how the creative freelance market moves.</p>
+        </div>
+
+        <div style="padding:20px 22px;background:var(--ink);border:var(--bdr);">
+          <div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:10px;">Phase 2</div>
+          <div style="font-size:13px;font-weight:500;color:var(--cream);margin-bottom:8px;">Market intelligence tier</div>
+          <p style="font-size:12px;color:var(--ink-light);line-height:1.7;">A paid add-on for studios wanting deeper data. Cross-studio benchmarking, discipline trends, rate movement reports. Studios spending £50k+ on freelancers will pay for this.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
   <div id="hiw-flow" style="border-bottom:var(--bdr);">
     <div style="max-width:1200px;margin:0 auto;padding:48px 36px 32px;display:flex;align-items:baseline;gap:20px;border-bottom:var(--bdr);">
       <div style="font-family:var(--serif);font-size:64px;font-weight:300;color:var(--cream-dark);line-height:1;">04</div>
@@ -3993,10 +4229,10 @@ function emailTabGroup(el, id, groupId) {
   <!-- 07: SOCIAL & BRAND -->
   <div id="hiw-brand" style="border-bottom:var(--bdr);">
     <div style="max-width:1200px;margin:0 auto;padding:48px 36px 32px;display:flex;align-items:baseline;gap:20px;border-bottom:var(--bdr);">
-      <div style="font-family:var(--serif);font-size:64px;font-weight:300;color:var(--cream-dark);line-height:1;">07</div>
+      <div style="font-family:var(--serif);font-size:64px;font-weight:300;color:var(--cream-dark);line-height:1;">08</div>
       <div>
-        <h2 style="font-family:var(--serif);font-size:36px;font-weight:300;color:var(--ink);line-height:1;margin-bottom:6px;">Social &amp; <em style="font-style:italic;color:var(--ink-light)">brand building.</em></h2>
-        <p style="font-size:13px;color:var(--ink-light);max-width:560px;line-height:1.7;">The Gallery is a curated product. The brand should feel the same way — considered, industry-facing, and worth following before you even need it.</p>
+        <h2 style="font-family:var(--serif);font-size:36px;font-weight:300;color:var(--ink);line-height:1;margin-bottom:6px;">Brand <em style="font-style:italic;color:var(--ink-light)">&amp; community.</em></h2>
+        <p style="font-size:13px;color:var(--ink-light);max-width:600px;line-height:1.7;">The Gallery is not just a platform — it is a community of the best creative freelancers in the UK. Brand building, community presence, and genuine industry insight are part of the product. A freelancer who follows The Gallery before they apply is already bought in.</p>
       </div>
     </div>
     <div style="max-width:1200px;margin:0 auto;padding:48px 36px 80px;display:grid;grid-template-columns:1fr 1fr;gap:60px;">
@@ -4055,6 +4291,61 @@ function emailTabGroup(el, id, groupId) {
         </div>
       </div>
 
+    </div>
+
+    <!-- Community flywheel -->
+    <div style="max-width:1200px;margin:0 auto;padding:48px 36px 64px;border-top:var(--bdr);">
+      <div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:8px;">The flywheel</div>
+      <h3 style="font-family:var(--serif);font-size:26px;font-weight:300;color:var(--ink);margin-bottom:32px;">How community <em style="font-style:italic;">compounds.</em></h3>
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:0;align-items:center;">
+        <div style="text-align:center;padding:24px 16px;background:white;border:var(--bdr);">
+          <div style="font-size:28px;margin-bottom:10px;">🎨</div>
+          <div style="font-size:12px;font-weight:500;color:var(--ink);margin-bottom:6px;">Brand drives inbound</div>
+          <div style="font-size:11px;color:var(--ink-light);line-height:1.6;">LinkedIn, newsletter, and events attract applications from people who already get it.</div>
+        </div>
+        <div style="text-align:center;font-size:20px;color:var(--green);">→</div>
+        <div style="text-align:center;padding:24px 16px;background:white;border:var(--bdr);">
+          <div style="font-size:28px;margin-bottom:10px;">✓</div>
+          <div style="font-size:12px;font-weight:500;color:var(--ink);margin-bottom:6px;">Better pool quality</div>
+          <div style="font-size:11px;color:var(--ink-light);line-height:1.6;">Higher-calibre applicants improve the talent pool. Curation standard holds.</div>
+        </div>
+        <div style="text-align:center;font-size:20px;color:var(--green);">→</div>
+        <div style="text-align:center;padding:24px 16px;background:white;border:var(--bdr);">
+          <div style="font-size:28px;margin-bottom:10px;">🏢</div>
+          <div style="font-size:12px;font-weight:500;color:var(--ink);margin-bottom:6px;">Better studios join</div>
+          <div style="font-size:11px;color:var(--ink-light);line-height:1.6;">Better talent attracts more discerning studios — who generate stronger endorsements.</div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:0;align-items:center;margin-top:0;">
+        <div style="text-align:center;padding:4px;"></div>
+        <div></div>
+        <div style="text-align:center;font-size:20px;color:var(--green);">↓</div>
+        <div></div>
+        <div style="text-align:center;padding:4px;"></div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:0;align-items:center;">
+        <div style="text-align:center;padding:24px 16px;background:var(--green-soft);border:var(--bdr);border-color:var(--green);">
+          <div style="font-size:28px;margin-bottom:10px;">📈</div>
+          <div style="font-size:12px;font-weight:500;color:var(--ink);margin-bottom:6px;">More applications</div>
+          <div style="font-size:11px;color:var(--ink-light);line-height:1.6;">Word-of-mouth in the creative industry moves fast. The Gallery becomes the place to be.</div>
+        </div>
+        <div style="text-align:center;font-size:20px;color:var(--green);">←</div>
+        <div style="text-align:center;padding:24px 16px;background:var(--green-soft);border:var(--bdr);border-color:var(--green);">
+          <div style="font-size:28px;margin-bottom:10px;">⭐</div>
+          <div style="font-size:12px;font-weight:500;color:var(--ink);margin-bottom:6px;">Endorsements compound</div>
+          <div style="font-size:11px;color:var(--ink-light);line-height:1.6;">Real bookings generate real endorsements. Trust signals grow. Platform value increases.</div>
+        </div>
+        <div style="text-align:center;font-size:20px;color:var(--green);">←</div>
+        <div style="text-align:center;padding:24px 16px;background:white;border:var(--bdr);">
+          <div style="font-size:28px;margin-bottom:10px;">🤝</div>
+          <div style="font-size:12px;font-weight:500;color:var(--ink);margin-bottom:6px;">Studios refer studios</div>
+          <div style="font-size:11px;color:var(--ink-light);line-height:1.6;">By month 18, inbound should account for 40%+ of new studio enquiries.</div>
+        </div>
+      </div>
+      <div style="margin-top:32px;padding:20px 28px;background:var(--ink);display:flex;align-items:center;gap:24px;">
+        <div style="font-family:var(--serif);font-size:32px;font-weight:300;color:var(--green);">→</div>
+        <p style="font-size:13px;color:var(--cream);line-height:1.7;">By month 18 the brand should be doing nearly half the sales work. A studio that finds The Gallery through LinkedIn or a forwarded newsletter is already pre-sold — they arrive understanding the value before they've spoken to anyone.</p>
+      </div>
     </div>
   </div>
   <footer><span class="f-logo">The <em>Gallery</em></span><div class="f-links"><span class="f-link" onclick="show('faq')">FAQ</span><span class="f-link" onclick="show('privacy')">Privacy policy</span><span class="f-link" onclick="show('legal')">Legal</span><span class="f-note">hello@thegallery.global</span></div></footer>
