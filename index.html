@@ -4096,137 +4096,215 @@ function emailTabGroup(el, id, groupId) {
   <!-- 06: FINANCIAL PROJECTIONS -->
   <div id="hiw-finance" style="border-bottom:var(--bdr);">
     <div style="max-width:1200px;margin:0 auto;padding:48px 36px 32px;display:flex;align-items:baseline;gap:20px;border-bottom:var(--bdr);">
-      <div style="font-family:var(--serif);font-size:64px;font-weight:300;color:var(--cream-dark);line-height:1;">06</div>
+      <div style="font-family:var(--serif);font-size:64px;font-weight:300;color:var(--cream-dark);line-height:1;">07</div>
       <div>
-        <h2 style="font-family:var(--serif);font-size:36px;font-weight:300;color:var(--ink);line-height:1;margin-bottom:6px;">Financial <em style="font-style:italic;color:var(--ink-light)">projections.</em></h2>
-        <p style="font-size:13px;color:var(--ink-light);max-width:560px;line-height:1.7;">Simple model. One revenue stream. Flat subscription, no booking fees. Projected at three growth stages.</p>
+        <h2 style="font-family:var(--serif);font-size:36px;font-weight:300;color:var(--ink);line-height:1;margin-bottom:6px;">Financial <em style="font-style:italic;color:var(--ink-light)">model.</em></h2>
+        <p style="font-size:13px;color:var(--ink-light);max-width:600px;line-height:1.7;">Two subscription tiers. Both paid upfront. No booking fees, no placement commission, no rolling monthly. Studios commit and get immediate full access to the platform.</p>
       </div>
     </div>
-    <div style="max-width:1200px;margin:0 auto;padding:48px 36px 80px;">
 
-      <!-- Assumptions -->
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:48px;">
-        <div style="background:var(--cream-mid);border:var(--bdr);padding:20px 24px;">
-          <div style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:8px;">Studio subscription</div>
-          <div style="font-family:var(--serif);font-size:36px;font-weight:300;color:var(--ink);line-height:1;">£499</div>
-          <div style="font-size:12px;color:var(--ink-light);margin-top:4px;">per month · 6-month minimum</div>
+    <div style="max-width:1200px;margin:0 auto;padding:48px 36px;border-bottom:var(--bdr);">
+
+      <!-- Two tiers -->
+      <div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:20px;">Subscription tiers</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:48px;">
+
+        <div style="background:white;border:var(--bdr);border-top:3px solid var(--ink);padding:28px 28px 24px;">
+          <div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:16px;">Annual tier · Recommended</div>
+          <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:4px;">
+            <div style="font-family:var(--serif);font-size:52px;font-weight:300;color:var(--ink);line-height:1;">£799</div>
+            <div style="font-size:13px;color:var(--ink-light);">/month</div>
+          </div>
+          <div style="font-size:12px;color:var(--ink-light);margin-bottom:24px;padding-bottom:20px;border-bottom:var(--bdr);">12-month commitment · £9,588 paid upfront</div>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span style="font-size:12px;color:var(--ink-light);">Commitment</span>
+              <span style="font-size:12px;font-weight:500;color:var(--ink);">12 months</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span style="font-size:12px;color:var(--ink-light);">Paid upfront</span>
+              <span style="font-size:12px;font-weight:500;color:var(--ink);">£9,588</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span style="font-size:12px;color:var(--ink-light);">Booking fees</span>
+              <span style="font-size:12px;font-weight:500;color:var(--ink);">None</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span style="font-size:12px;color:var(--ink-light);">Annual saving vs short-term</span>
+              <span style="font-size:12px;font-weight:500;color:var(--green);">£4,800/year</span>
+            </div>
+          </div>
         </div>
-        <div style="background:var(--cream-mid);border:var(--bdr);padding:20px 24px;">
-          <div style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:8px;">Freelancer access</div>
-          <div style="font-family:var(--serif);font-size:36px;font-weight:300;color:var(--ink);line-height:1;">Free</div>
-          <div style="font-size:12px;color:var(--ink-light);margin-top:4px;">always · vetted &amp; curated</div>
+
+        <div style="background:white;border:var(--bdr);border-top:3px solid var(--green);padding:28px 28px 24px;">
+          <div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--green);margin-bottom:16px;">Short-term tier · For studios not ready to commit</div>
+          <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:4px;">
+            <div style="font-family:var(--serif);font-size:52px;font-weight:300;color:var(--ink);line-height:1;">£1,199</div>
+            <div style="font-size:13px;color:var(--ink-light);">/month</div>
+          </div>
+          <div style="font-size:12px;color:var(--ink-light);margin-bottom:24px;padding-bottom:20px;border-bottom:var(--bdr);">6-month commitment · £7,194 paid upfront</div>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span style="font-size:12px;color:var(--ink-light);">Commitment</span>
+              <span style="font-size:12px;font-weight:500;color:var(--ink);">6 months</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span style="font-size:12px;color:var(--ink-light);">Paid upfront</span>
+              <span style="font-size:12px;font-weight:500;color:var(--ink);">£7,194</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span style="font-size:12px;color:var(--ink-light);">Booking fees</span>
+              <span style="font-size:12px;font-weight:500;color:var(--ink);">None</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span style="font-size:12px;color:var(--ink-light);">Annual cost if renewed</span>
+              <span style="font-size:12px;font-weight:500;color:var(--amber);">£14,388 (+£4,800/yr vs annual)</span>
+            </div>
+          </div>
         </div>
-        <div style="background:var(--cream-mid);border:var(--bdr);padding:20px 24px;">
-          <div style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:8px;">Booking fee</div>
-          <div style="font-family:var(--serif);font-size:36px;font-weight:300;color:var(--ink);line-height:1;">£0</div>
-          <div style="font-size:12px;color:var(--ink-light);margin-top:4px;">no commission on placements</div>
-        </div>
+
       </div>
 
-      <!-- Projection table -->
-      <div style="border:var(--bdr);background:white;margin-bottom:32px;">
-        <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;padding:12px 20px;background:var(--ink);border-bottom:var(--bdr);">
+      <!-- Why no fee model -->
+      <div style="background:var(--cream-mid);border:var(--bdr);padding:24px 28px;margin-bottom:48px;">
+        <div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:10px;">Why no placement fee?</div>
+        <p style="font-size:13px;color:var(--ink-mid);line-height:1.8;margin-bottom:0;">A percentage-based placement fee was seriously considered and modelled. The numbers work. The operations don't — there's no reliable way to track off-platform bookings, and one disputed invoice damages a studio relationship more than the fee is worth. The fee model becomes viable in Phase 2 when briefs flow through the platform as a required step. For now: clean, simple, impossible to dispute.</p>
+      </div>
+
+      <!-- Revenue forecast -->
+      <div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:20px;">Revenue forecast · 50 freelancers per studio</div>
+      <div style="border:var(--bdr);background:white;margin-bottom:16px;">
+        <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;padding:12px 20px;background:var(--ink);">
           <div style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);">Scenario</div>
           <div style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);text-align:right;">Studios</div>
-          <div style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);text-align:right;">MRR</div>
-          <div style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);text-align:right;">ARR</div>
+          <div style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);text-align:right;">Freelancers</div>
+          <div style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);text-align:right;">Annual ARR</div>
+          <div style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);text-align:right;">Blended ARR</div>
         </div>
-        <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;padding:16px 20px;border-bottom:var(--bdr);align-items:center;">
+
+        <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;padding:16px 20px;border-bottom:var(--bdr);align-items:center;">
           <div>
-            <div style="font-size:13px;font-weight:500;color:var(--ink);">Early traction</div>
-            <div style="font-size:11px;color:var(--ink-light);margin-top:2px;">First wave — word of mouth, direct outreach</div>
+            <div style="font-size:13px;font-weight:500;color:var(--ink);">SEIS raise trigger</div>
+            <div style="font-size:11px;color:var(--ink-light);margin-top:2px;">First 10 studios · direct outreach</div>
           </div>
-          <div style="font-size:14px;color:var(--ink);text-align:right;font-weight:500;">10</div>
-          <div style="font-size:14px;color:var(--ink);text-align:right;font-weight:500;">£4,990</div>
-          <div style="font-size:14px;color:var(--green);text-align:right;font-weight:500;">£59,880</div>
+          <div style="font-size:13px;color:var(--ink);text-align:right;font-weight:500;">10</div>
+          <div style="font-size:13px;color:var(--ink-light);text-align:right;">500</div>
+          <div style="font-size:13px;color:var(--ink);text-align:right;font-weight:500;">£95,880</div>
+          <div style="font-size:13px;color:var(--green);text-align:right;font-weight:500;">£112,686</div>
         </div>
-        <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;padding:16px 20px;border-bottom:var(--bdr);align-items:center;background:var(--green-soft);">
+
+        <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;padding:16px 20px;border-bottom:var(--bdr);align-items:center;background:var(--green-soft);">
           <div>
-            <div style="font-size:13px;font-weight:500;color:var(--ink);">Target — end of year 1</div>
-            <div style="font-size:11px;color:var(--ink-light);margin-top:2px;">20 studios · 400 freelancers on platform</div>
+            <div style="font-size:13px;font-weight:500;color:var(--ink);">Year 1 target</div>
+            <div style="font-size:11px;color:var(--ink-light);margin-top:2px;">20 studios · 1,000 freelancers</div>
           </div>
-          <div style="font-size:14px;color:var(--ink);text-align:right;font-weight:500;">20</div>
-          <div style="font-size:14px;color:var(--ink);text-align:right;font-weight:500;">£9,980</div>
-          <div style="font-size:14px;color:var(--green);text-align:right;font-weight:500;">£119,760</div>
+          <div style="font-size:13px;color:var(--ink);text-align:right;font-weight:500;">20</div>
+          <div style="font-size:13px;color:var(--ink-light);text-align:right;">1,000</div>
+          <div style="font-size:13px;color:var(--ink);text-align:right;font-weight:500;">£191,760</div>
+          <div style="font-size:13px;color:var(--green);text-align:right;font-weight:500;">£225,372</div>
         </div>
-        <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;padding:16px 20px;border-bottom:var(--bdr);align-items:center;">
+
+        <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;padding:16px 20px;border-bottom:var(--bdr);align-items:center;">
           <div>
-            <div style="font-size:13px;font-weight:500;color:var(--ink);">Growth — end of year 2</div>
-            <div style="font-size:11px;color:var(--ink-light);margin-top:2px;">50 studios · ~1,000 freelancers</div>
+            <div style="font-size:13px;font-weight:500;color:var(--ink);">Year 2 target</div>
+            <div style="font-size:11px;color:var(--ink-light);margin-top:2px;">50 studios · 2,500 freelancers</div>
           </div>
-          <div style="font-size:14px;color:var(--ink);text-align:right;font-weight:500;">50</div>
-          <div style="font-size:14px;color:var(--ink);text-align:right;font-weight:500;">£24,950</div>
-          <div style="font-size:14px;color:var(--green);text-align:right;font-weight:500;">£299,400</div>
+          <div style="font-size:13px;color:var(--ink);text-align:right;font-weight:500;">50</div>
+          <div style="font-size:13px;color:var(--ink-light);text-align:right;">2,500</div>
+          <div style="font-size:13px;color:var(--ink);text-align:right;font-weight:500;">£479,400</div>
+          <div style="font-size:13px;color:var(--green);text-align:right;font-weight:500;">£563,430</div>
         </div>
-        <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;padding:16px 20px;align-items:center;">
+
+        <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;padding:16px 20px;align-items:center;">
           <div>
-            <div style="font-size:13px;font-weight:500;color:var(--ink);">Scale — end of year 3</div>
-            <div style="font-size:11px;color:var(--ink-light);margin-top:2px;">100 studios · global expansion begins</div>
+            <div style="font-size:13px;font-weight:500;color:var(--ink);">£1m ARR milestone</div>
+            <div style="font-size:11px;color:var(--ink-light);margin-top:2px;">~104 studios (annual) · ~89 studios (blended)</div>
           </div>
-          <div style="font-size:14px;color:var(--ink);text-align:right;font-weight:500;">100</div>
-          <div style="font-size:14px;color:var(--ink);text-align:right;font-weight:500;">£49,900</div>
-          <div style="font-size:14px;color:var(--green);text-align:right;font-weight:500;">£598,800</div>
+          <div style="font-size:13px;color:var(--ink);text-align:right;font-weight:500;">89–104</div>
+          <div style="font-size:13px;color:var(--ink-light);text-align:right;">4,450–5,200</div>
+          <div style="font-size:13px;color:var(--ink);text-align:right;font-weight:500;">£997k</div>
+          <div style="font-size:13px;color:var(--green);text-align:right;font-weight:500;">£1,002k</div>
+        </div>
+      </div>
+      <div style="font-size:11px;color:var(--ink-faint);line-height:1.6;margin-bottom:48px;">Annual ARR assumes all studios on the £799/12mo tier. Blended ARR assumes 50/50 split between tiers with 80% renewal at 6 months on the short-term tier. Both paid upfront.</div>
+
+      <!-- Bar chart -->
+      <div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:20px;">ARR trajectory</div>
+      <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:48px;">
+        <div style="display:flex;align-items:center;gap:16px;">
+          <div style="font-size:12px;color:var(--ink-light);width:130px;flex-shrink:0;">10 studios</div>
+          <div style="flex:1;background:var(--cream-mid);height:36px;border:var(--bdr);position:relative;">
+            <div style="width:10%;height:100%;background:var(--ink-faint);"></div>
+          </div>
+          <div style="font-size:12px;font-weight:500;color:var(--ink);width:90px;text-align:right;flex-shrink:0;">£112k blended</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px;">
+          <div style="font-size:12px;color:var(--ink-light);width:130px;flex-shrink:0;">20 studios · Y1</div>
+          <div style="flex:1;background:var(--cream-mid);height:36px;border:var(--bdr);position:relative;">
+            <div style="width:22%;height:100%;background:var(--green);"></div>
+          </div>
+          <div style="font-size:12px;font-weight:500;color:var(--green);width:90px;text-align:right;flex-shrink:0;">£225k blended</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px;">
+          <div style="font-size:12px;color:var(--ink-light);width:130px;flex-shrink:0;">50 studios · Y2</div>
+          <div style="flex:1;background:var(--cream-mid);height:36px;border:var(--bdr);position:relative;">
+            <div style="width:56%;height:100%;background:var(--green);opacity:.85;"></div>
+          </div>
+          <div style="font-size:12px;font-weight:500;color:var(--ink);width:90px;text-align:right;flex-shrink:0;">£563k blended</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px;">
+          <div style="font-size:12px;color:var(--ink-light);width:130px;flex-shrink:0;">£1m ARR · Y3</div>
+          <div style="flex:1;background:var(--cream-mid);height:36px;border:var(--bdr);position:relative;">
+            <div style="width:100%;height:100%;background:var(--ink);"></div>
+          </div>
+          <div style="font-size:12px;font-weight:500;color:var(--ink);width:90px;text-align:right;flex-shrink:0;">£1m+</div>
         </div>
       </div>
 
-      <!-- Visual bar chart -->
-      <div style="margin-bottom:32px;">
-        <div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:20px;">ARR growth trajectory</div>
-        <div style="display:flex;flex-direction:column;gap:14px;">
-          <div style="display:flex;align-items:center;gap:16px;">
-            <div style="font-size:12px;color:var(--ink-light);width:100px;flex-shrink:0;">10 studios</div>
-            <div style="flex:1;background:var(--cream-mid);height:36px;position:relative;border:var(--bdr);">
-              <div style="width:10%;height:100%;background:var(--ink-faint);display:flex;align-items:center;padding-left:10px;"></div>
+      <!-- Valuation & costs -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <div style="background:var(--ink);padding:24px 28px;">
+          <div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:16px;">Implied valuation</div>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="display:flex;justify-content:space-between;">
+              <span style="font-size:12px;color:var(--ink-faint);">Y1 · 20 studios</span>
+              <span style="font-size:12px;font-weight:500;color:var(--cream);">£1.1m–£2.3m</span>
             </div>
-            <div style="font-size:12px;font-weight:500;color:var(--ink);width:80px;text-align:right;flex-shrink:0;">£59.9k</div>
-          </div>
-          <div style="display:flex;align-items:center;gap:16px;">
-            <div style="font-size:12px;color:var(--ink-light);width:100px;flex-shrink:0;">20 studios</div>
-            <div style="flex:1;background:var(--cream-mid);height:36px;position:relative;border:var(--bdr);">
-              <div style="width:20%;height:100%;background:var(--green);display:flex;align-items:center;padding-left:10px;"></div>
+            <div style="display:flex;justify-content:space-between;">
+              <span style="font-size:12px;color:var(--ink-faint);">Y2 · 50 studios</span>
+              <span style="font-size:12px;font-weight:500;color:var(--cream);">£2.8m–£5.6m</span>
             </div>
-            <div style="font-size:12px;font-weight:500;color:var(--green);width:80px;text-align:right;flex-shrink:0;">£119.8k</div>
-          </div>
-          <div style="display:flex;align-items:center;gap:16px;">
-            <div style="font-size:12px;color:var(--ink-light);width:100px;flex-shrink:0;">50 studios</div>
-            <div style="flex:1;background:var(--cream-mid);height:36px;position:relative;border:var(--bdr);">
-              <div style="width:50%;height:100%;background:var(--green);opacity:.8;display:flex;align-items:center;padding-left:10px;"></div>
+            <div style="display:flex;justify-content:space-between;padding-top:12px;border-top:0.5px solid rgba(255,255,255,.1);">
+              <span style="font-size:12px;color:var(--ink-faint);">At £1m ARR</span>
+              <span style="font-size:13px;font-weight:500;color:var(--green);">£5m–£10m+</span>
             </div>
-            <div style="font-size:12px;font-weight:500;color:var(--ink);width:80px;text-align:right;flex-shrink:0;">£299.4k</div>
           </div>
-          <div style="display:flex;align-items:center;gap:16px;">
-            <div style="font-size:12px;color:var(--ink-light);width:100px;flex-shrink:0;">100 studios</div>
-            <div style="flex:1;background:var(--cream-mid);height:36px;position:relative;border:var(--bdr);">
-              <div style="width:100%;height:100%;background:var(--ink);display:flex;align-items:center;padding-left:10px;"></div>
-            </div>
-            <div style="font-size:12px;font-weight:500;color:var(--ink);width:80px;text-align:right;flex-shrink:0;">£598.8k</div>
-          </div>
+          <div style="font-size:10px;color:var(--ink-faint);margin-top:14px;">Based on standard SaaS 5–10× ARR multiple</div>
         </div>
-      </div>
 
-      <!-- Exit note -->
-      <div style="background:var(--ink);padding:24px 28px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;">
-        <div>
-          <div style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:8px;">Valuation basis</div>
-          <div style="font-family:var(--serif);font-size:22px;font-weight:300;color:var(--cream);line-height:1.2;">SaaS · 5–10× ARR</div>
-          <div style="font-size:11px;color:var(--ink-faint);margin-top:6px;">Standard for subscription platforms at this stage</div>
-        </div>
-        <div>
-          <div style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:8px;">At 20 studios (Y1 target)</div>
-          <div style="font-family:var(--serif);font-size:22px;font-weight:300;color:var(--cream);line-height:1.2;">£600k–£1.2m</div>
-          <div style="font-size:11px;color:var(--ink-faint);margin-top:6px;">Conservative exit or raise basis</div>
-        </div>
-        <div>
-          <div style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:8px;">At 100 studios (Y3)</div>
-          <div style="font-family:var(--serif);font-size:22px;font-weight:300;color:var(--green);line-height:1.2;">£3m–£6m</div>
-          <div style="font-size:11px;color:var(--ink-faint);margin-top:6px;">Series A territory or strategic acquisition</div>
+        <div style="background:var(--cream-mid);border:var(--bdr);padding:24px 28px;">
+          <div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:16px;">Platform running costs</div>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="display:flex;justify-content:space-between;">
+              <span style="font-size:12px;color:var(--ink-light);">Y1 · 1,000 freelancers</span>
+              <span style="font-size:12px;font-weight:500;color:var(--ink);">£244/month</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;">
+              <span style="font-size:12px;color:var(--ink-light);">Y2 · 2,500 freelancers</span>
+              <span style="font-size:12px;font-weight:500;color:var(--ink);">£454/month</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;padding-top:12px;border-top:0.5px solid var(--cream-dark);">
+              <span style="font-size:12px;color:var(--ink-light);">Gross margin at scale</span>
+              <span style="font-size:13px;font-weight:500;color:var(--green);">~99%</span>
+            </div>
+          </div>
+          <div style="font-size:10px;color:var(--ink-faint);margin-top:14px;">AI + WhatsApp + hosting + Make.com + email</div>
         </div>
       </div>
 
     </div>
   </div>
 
-  <!-- 07: SOCIAL & BRAND -->
   <div id="hiw-brand" style="border-bottom:var(--bdr);">
     <div style="max-width:1200px;margin:0 auto;padding:48px 36px 32px;display:flex;align-items:baseline;gap:20px;border-bottom:var(--bdr);">
       <div style="font-family:var(--serif);font-size:64px;font-weight:300;color:var(--cream-dark);line-height:1;">08</div>
